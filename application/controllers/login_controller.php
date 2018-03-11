@@ -6,6 +6,7 @@ class Login_controller extends CI_Controller {
 	
 	private $message="";
 	private $test 		= "";
+	private $coba			= "";
 
 	/*public function index()
 	{
