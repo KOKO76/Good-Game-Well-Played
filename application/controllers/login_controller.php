@@ -7,7 +7,7 @@ class Login_controller extends CI_Controller {
 	private $message="";
 	private $test 		= "";
 
-	public function index()
+	/*public function index()
 	{
 		$data['title']="Login";
 		$data['message']=$this->message;
@@ -15,7 +15,7 @@ class Login_controller extends CI_Controller {
 		$this->load->view('login_view',$data);
 		$this->load->view('footer');
 	}
-
+*/
 
 	public function getlogin(){
 		$u = $this->input->post('username');
