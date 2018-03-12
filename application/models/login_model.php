@@ -5,9 +5,9 @@ class Login_model extends CI_Model{
  	
   public function login($u, $p)
  	{
-        $password = $p;
+        $password = md5($p);
         $this->db->where('username_a',$u);
-        $this->db->where('password',$p);
+        $this->db->where('password',$password);
 
         $query = $this->db->get('admin');
 
@@ -35,9 +35,9 @@ class Login_model extends CI_Model{
 
   public function login1($u, $p)
   {
-        $password = $p;
+        $password = md5($p);
         $this->db->where('username_p',$u);
-        $this->db->where('password',$p);
+        $this->db->where('password',$password);
 
         $query = $this->db->get('pasien');
 
@@ -76,8 +76,14 @@ class Login_model extends CI_Model{
 
         if(!isset($is_logged_in) || $is_logged_in!==TRUE)
         {
-            redirect('/'); // tanda "/" merupakan tanda index(login)
-            exit;
+            // redirect('/'); // tanda "/" merupakan tanda index(login)
+            // exit;
+
+            return FALSE;
+        }
+        else
+        {
+          return TRUE;
         }
     }
       
