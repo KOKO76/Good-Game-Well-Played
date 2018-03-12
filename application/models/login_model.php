@@ -16,8 +16,7 @@ class Login_model extends CI_Model{
 			{ 
 	            foreach ($query->result() as $row){ 
 	                $data = array(
-                              'username'=> $row->username,
-                              'password'=> $row->password,
+                              'username'=> $row->username_a,
                               'level'=> $row->level,
 	                            'logged_in'=>TRUE
 	                        );
@@ -46,9 +45,7 @@ class Login_model extends CI_Model{
       { 
               foreach ($query->result() as $row){ 
                   $data = array(
-                              'username'=> $row->username,
-                              'password'=> $row->password,
-                              
+                              'username'=> $row->username_p,
                               'logged_in'=>TRUE
                           );
               }

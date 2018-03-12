@@ -29,12 +29,12 @@ class Login_controller extends CI_Controller {
 		elseif ($this->session->userdata('level')==1) 
 		{
 			// redirect ke halaman admin
-			echo "admin"; exit();
+			print_r($this->session->userdata()); exit();
 		}
 		else
 		{
 			// redirect ke halaman pasien
-			echo "pasien"; exit();
+			print_r($this->session->userdata());  exit();
 		}
 	}
 
