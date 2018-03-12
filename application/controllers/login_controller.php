@@ -3,16 +3,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login_controller extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+
+		$this->load->library('login_model');
+	}
+
 	
 	private $message="";
 
 	public function index()
 	{
-		$data['title']="Login";
-		$data['message']=$this->message;
-		$this->load->view('header');
-		$this->load->view('login_view',$data);
-		$this->load->view('footer');
+		if (!$this->login_model->isLoggedIn()) 
+		{
+			/* Data */
+			$data['title']="Login";
+			$data['message']=$this->message;
+
+			/* Load View */
+			$this->load->view('header');
+			$this->load->view('login_view',$data);
+			$this->load->view('footer');
+		} 
+		elseif ($this->session->userdata('level')==1) 
+		{
+			// redirect ke halaman admin
+			echo "admin"; exit();
+		}
+		else
+		{
+			// redirect ke halaman pasien
+			echo "pasien"; exit();
+		}
 	}
 
 
@@ -34,21 +57,21 @@ class Login_controller extends CI_Controller {
 			$this->load->view('login_view',$data);
 			$this->load->view('footer');
 		}
-
 		else
 		{
 			$result= $this->login_model->login($u, $p);
 			if ($result==TRUE && $this->session->userdata('level')==1)
 			{
-			// panggil fungsi cekUserPass di MyModel
+				// panggil fungsi cekUserPass di MyModel
 				redirect('#');
 			}
 			// $result = $this->login_model->login1($u, $p);
-			elseif ($this->login_model->login1($u,$p)) {
+			elseif ($this->login_model->login1($u,$p)) 
+			{
 				redirect('berita');
 			}
-
-			else{
+			else
+			{
 				$data['title']="Login";
 				$this->message="username atau password atau captcha anda salah, silahkan coba lagi";
 				$data['message']=$this->message;
