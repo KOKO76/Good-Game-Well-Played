@@ -5,10 +5,8 @@ class Login_controller extends CI_Controller {
 
 	
 	private $message="";
-	private $test 		= "";
-	private $coba			= "";
 
-	/*public function index()
+	public function index()
 	{
 		$data['title']="Login";
 		$data['message']=$this->message;
@@ -16,7 +14,7 @@ class Login_controller extends CI_Controller {
 		$this->load->view('login_view',$data);
 		$this->load->view('footer');
 	}
-*/
+
 
 	public function getlogin(){
 		$u = $this->input->post('username');
@@ -44,10 +42,9 @@ class Login_controller extends CI_Controller {
 			{
 			// panggil fungsi cekUserPass di MyModel
 				redirect('#');
-
 			}
-			$result= $this->login_model->login1($u, $p);
-			elseif () {
+			// $result = $this->login_model->login1($u, $p);
+			elseif ($this->login_model->login1($u,$p)) {
 				redirect('berita');
 			}
 
@@ -67,11 +64,11 @@ class Login_controller extends CI_Controller {
 
 	
 
-/*	public function logout()
+	public function logout()
 	{
         $this->session->sess_destroy();
         redirect('/' ,'refresh');
         exit;
     }
-*/
+
 }

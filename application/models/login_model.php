@@ -6,7 +6,7 @@ class Login_model extends CI_Model{
   public function login($u, $p)
  	{
         $password = $p;
-        $this->db->where('username',$u);
+        $this->db->where('username_a',$u);
         $this->db->where('password',$p);
 
         $query = $this->db->get('admin');
@@ -36,7 +36,7 @@ class Login_model extends CI_Model{
   public function login1($u, $p)
   {
         $password = $p;
-        $this->db->where('username',$u);
+        $this->db->where('username_p',$u);
         $this->db->where('password',$p);
 
         $query = $this->db->get('pasien');
