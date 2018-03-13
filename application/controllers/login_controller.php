@@ -63,7 +63,7 @@ class Login_controller extends CI_Controller {
 			if ($result==TRUE && $this->session->userdata('level')==1)
 			{
 				// panggil fungsi cekUserPass di MyModel
-				redirect('dashboard_admin');
+				redirect('#');
 			}
 			// $result = $this->login_model->login1($u, $p);
 			elseif ($this->login_model->login1($u,$p)) 
