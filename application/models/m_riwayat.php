@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit ('No direct script acces allowed');
-class M_penyakit extends CI_model {
+class M_riwayat extends CI_model {
 
 		function __construct()
 		{
@@ -9,9 +9,8 @@ class M_penyakit extends CI_model {
 
 	public function getTabel(){
 
-		$mhs = $this->db->query("SELECT * FROM penyakit");
+		$mhs = $this->db->query("SELECT * FROM riwayat");
 		return $mhs->result_array();
-		
 	}
 }
 ?>

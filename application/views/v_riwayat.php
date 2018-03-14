@@ -19,10 +19,11 @@
       <table class="table table-striped table-bordered bootstrap-datatable datatable">
         <thead>
           <tr>
-            <th><center>Kode</center></th>
+            <th><center>No</center></th>
+            <th><center>Nama</center></th>
+            <th><center>Umur</center></th>
             <th><center>Penyakit</center></th>
-            <th><center>Deskripsi</center></th>
-            <th><center>Penanganan</center></th>
+            <th><center>Tanggal</center></th>
             <th><center>Aksi</center><th>
           </tr>
         </thead>
@@ -32,15 +33,13 @@
                 foreach ($data as $key) 
                 { ?>
                   <tr>
-                    <td class="center"><?php echo $key['id_penyakit'];?></td>
+                    <td class="center"><?php echo $key['id_riwayat'];?></td>
+                    <td class="center"><?php echo $key['nama_pasien'];?></td>
+                    <td class="center"><?php echo $key['umur'];?></td>
                     <td class="center"><?php echo $key['nama_penyakit'];?></td>
-                    <td class="center"><?php echo $key['deskripsi'];?></td>
-                    <td class="center"><?php echo $key['penanganan'];?></td>
+                    <td class="center"><?php echo $key['tanggal'];?></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-info" href="#">
-                          <i class="fa fa-edit"></i>                    
-                        </a>
                         <a class="btn btn-danger" href="##">
                           <i class="fa fa-trash-o"></i> 
                         </a>

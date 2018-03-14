@@ -65,12 +65,11 @@
             
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
-                <li><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>"> <i class="caret"></i>Beranda</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_penyakit/daftar"?>"> <i class="caret"></i>Penyakit</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_gejala/daftar"?>"> <i class="caret"></i>Gejala</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_relasi/daftar"?>"> <i class="caret"></i>Relasi</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_riwayat/daftar"?>"> <i class="caret"></i>Riwayat Pasien</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_pasien/daftar"?>"> <i class="caret"></i>Data Pasien</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_berandapasien"?>"> <i class="caret"></i>Beranda</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_penyakit"?>"> <i class="caret"></i>Profil</a></li>
+                <li><a href="index.html"> <i class="caret"></i>Konsultasi</a></li>
+                <li><a href="index.html"> <i class="caret"></i>Riwayat</a></li>
+                <li><a href="index.html"> <i class="caret"></i>Info Penyakit</a></li>
               </ul>
             </div>
             <div id="search" class="collapse clearfix">

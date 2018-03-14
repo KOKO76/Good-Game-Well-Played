@@ -21,8 +21,8 @@
           <tr>
             <th><center>Kode</center></th>
             <th><center>Penyakit</center></th>
-            <th><center>Deskripsi</center></th>
-            <th><center>Penanganan</center></th>
+            <th><center>Gejala</center></th>
+            <th><center>Bobot</center></th>
             <th><center>Aksi</center><th>
           </tr>
         </thead>
@@ -32,10 +32,10 @@
                 foreach ($data as $key) 
                 { ?>
                   <tr>
+                    <td class="center"><?php echo $key['id_relasi'];?></td>
                     <td class="center"><?php echo $key['id_penyakit'];?></td>
-                    <td class="center"><?php echo $key['nama_penyakit'];?></td>
-                    <td class="center"><?php echo $key['deskripsi'];?></td>
-                    <td class="center"><?php echo $key['penanganan'];?></td>
+                    <td class="center"><?php echo $key['id_gejala'];?></td>
+                    <td class="center"><?php echo $key['bobot'];?></td>
                     <td class="center">
                       <center>
                         <a class="btn btn-info" href="#">

@@ -69,7 +69,7 @@ class C_validasi extends CI_Controller {
 			// $result = $this->m_validasi->login1($u, $p);
 			elseif ($this->m_validasi->login1($u,$p)) 
 			{
-				redirect('berita');
+				redirect('c_berandapasien');
 			}
 			else
 			{
