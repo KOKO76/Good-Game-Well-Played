@@ -65,8 +65,8 @@
             
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
-                <li><a href="index.html"> <i class="caret"></i>Beranda</a></li>
-                <li><a href="index.html"> <i class="caret"></i>Penyakit</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>"> <i class="caret"></i>Beranda</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_penyakit"?>"> <i class="caret"></i>Penyakit</a></li>
                 <li><a href="index.html"> <i class="caret"></i>Gejala</a></li>
                 <li><a href="index.html"> <i class="caret"></i>Relasi</a></li>
                 <li><a href="index.html"> <i class="caret"></i>Riwayat Pasien</a></li>
