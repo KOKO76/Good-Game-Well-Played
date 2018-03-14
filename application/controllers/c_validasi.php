@@ -64,7 +64,7 @@ class C_validasi extends CI_Controller {
 			if ($result==TRUE && $this->session->userdata('level')==1)
 			{
 				// panggil fungsi cekUserPass di MyModel
-				redirect('#');
+				redirect('c_berandaadmin');
 			}
 			// $result = $this->m_validasi->login1($u, $p);
 			elseif ($this->m_validasi->login1($u,$p)) 
