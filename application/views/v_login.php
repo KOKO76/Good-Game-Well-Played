@@ -1,5 +1,5 @@
  <div id="heading-breadcrumbs">
-        <div class="container">
+        <div class="container"> <?php echo $data['message'];?>
           <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
               <h1 class="h2">Login User</h1>
@@ -18,7 +18,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
               <div class="box">
-                <form action="<?php echo site_url('Login_controller/getLogin') ?>" method="POST">
+                <form action="<?php echo site_url('C_validasi/getLogin') ?>" method="POST">
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="username" placeholder="Username" class="form-control">
