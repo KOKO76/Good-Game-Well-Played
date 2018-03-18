@@ -6,7 +6,7 @@
           </div>
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
-              <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
               <li class="breadcrumb-item active">Data Gejala</li>
            </ul>
           </div>
@@ -21,7 +21,7 @@
           <tr>
             <th><center>Kode</center></th>
             <th><center>Gejala</center></th>
-            <th><center>Aksi</center><th>
+            <th><center>Aksi</center></th>
           </tr>
         </thead>
     
@@ -30,8 +30,8 @@
                 foreach ($data as $key) 
                 { ?>
                   <tr>
-                    <td class="center"><?php echo $key['id_gejala'];?></td>
-                    <td class="center"><?php echo $key['nama_gejala'];?></td>
+                    <td><center><?php echo $key['id_gejala'];?></center></td>
+                    <td><justify-content-end><?php echo $key['nama_gejala'];?></justify-content-end></td>
                     <td class="center">
                       <center>
                         <a class="btn btn-info" href="#">

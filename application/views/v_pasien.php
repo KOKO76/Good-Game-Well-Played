@@ -24,7 +24,7 @@
             <th><center>Umur</center></th>
             <th><center>Jenis Kelamin</center></th>
             <th><center>Alamat</center></th>
-            <th><center>No Telepon</center><th>
+            <th><center>No Telepon</center></th>
             <th><center>Aksi</center></th>
           </tr>
         </thead>
@@ -35,12 +35,12 @@
                 foreach ($data as $key) 
                 { ?>
                   <tr>
-                     <td class="center"><?php echo $no;?></td>
-                    <td class="center"><?php echo $key['nama_pasien'];?></td>
-                    <td class="center"><?php echo $key['umur'];?></td>
-                    <td class="center"><?php echo $key['jenis_kelamin'];?></td>
-                    <td class="center"><?php echo $key['alamat'];?></td>
-                    <td class="center"><?php echo $key['no_tlp'];?></td>
+                    <td><center><?php echo $no;?></center></td>
+                    <td><center><?php echo $key['nama_pasien'];?></center></td>
+                    <td><center><?php echo $key['umur'];?></center></td>
+                    <td><center><?php echo $key['jenis_kelamin'];?></center></td>
+                    <td><center><?php echo $key['alamat'];?></center></td>
+                    <td><center><?php echo $key['no_tlp'];?></center></td>
                     <td class="center">
                       <center>
                         <a class="btn btn-danger" href="##">

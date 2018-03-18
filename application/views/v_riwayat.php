@@ -6,7 +6,7 @@
           </div>
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
-              <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
               <li class="breadcrumb-item active">Data Penyakit</li>
            </ul>
           </div>
@@ -22,9 +22,10 @@
             <th><center>No</center></th>
             <th><center>Nama</center></th>
             <th><center>Umur</center></th>
+            <th><center>Gejala</center></th>
             <th><center>Penyakit</center></th>
             <th><center>Tanggal</center></th>
-            <th><center>Aksi</center><th>
+            <th><center>Aksi</center></th>
           </tr>
         </thead>
     
@@ -33,11 +34,12 @@
                 foreach ($data as $key) 
                 { ?>
                   <tr>
-                    <td class="center"><?php echo $key['id_riwayat'];?></td>
-                    <td class="center"><?php echo $key['nama_pasien'];?></td>
-                    <td class="center"><?php echo $key['umur'];?></td>
-                    <td class="center"><?php echo $key['nama_penyakit'];?></td>
-                    <td class="center"><?php echo $key['tanggal'];?></td>
+                    <td><center><?php echo $key['id_riwayat'];?></center></td>
+                    <td><justify-content-end><?php echo $key['nama_pasien'];?></justify-content-end></td>
+                    <td><center><?php echo $key['umur'];?></center></td>
+                    <td><justify-content-end><?php echo $key['nama_gejala'];?></justify-content-end></td>
+                    <td><justify-content-end><?php echo $key['nama_penyakit'];?></justify-content-end></td>
+                    <td><center><?php echo $key['tanggal'];?></center></td>
                     <td class="center">
                       <center>
                         <a class="btn btn-danger" href="##">
