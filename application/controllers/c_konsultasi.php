@@ -13,14 +13,14 @@ class v_konsultasi extends CI_Controller
 
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$this->load->model('coba_model');
+		$this->load->model('m_konsultasi');
 	}
 
 	public function index()
 	{
-		$this->data['gejala']= $this->coba_model->getGejala();
+		$this->data['gejala']= $this->m_konsultasi->getGejala();
 		$this->load->view('headeradmin');
-		$this->load->view('coba/index',$this->data);
+		$this->load->view('c_konsultasi/index',$this->data);
 		$this->load->view('footer');
 	}
 
@@ -30,8 +30,8 @@ class v_konsultasi extends CI_Controller
 
 		/* Gejala yang dipilih pasien */
 		$selected 		= $this->input->post('gejala');
-		$environment	= $this->coba_model->getEnvironment();
-		$evidence		= $this->coba_model->getMassFunction($selected);
+		$environment	= $this->m_konsultasi->getEnvironment();
+		$evidence		= $this->m_konsultasi->getMassFunction($selected);
 
 		if (count($selected) < 2) {
 			echo "kurang bro";
@@ -116,7 +116,7 @@ class v_konsultasi extends CI_Controller
     echo "<br/>";
     $codes 				=array_keys($densitas_baru); 
     $final_codes	=explode(',',$codes[0]); 
-    $result				=$this->coba_model->final_codes($final_codes); 
+    $result				=$this->m_konsultasi->final_codes($final_codes); 
     // print_r($result); exit();
     echo "Terdeteksi penyakit <b>{$result[0][0]}</b> dengan derajat kepercayaan ".round($densitas_baru[$codes[0]]*100,2)."%"; 
 
@@ -125,7 +125,7 @@ class v_konsultasi extends CI_Controller
 		$this->data['evidence'] = $evidence;
 
 		/* Load View */
-		$this->load->view('coba/diagnosa', $this->data);
+		$this->load->view('c_konsultasi/diagnosa', $this->data);
 	}
 
 	

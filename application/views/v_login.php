@@ -20,12 +20,12 @@
               <div class="box">
                 <form action="<?php echo site_url('c_validasi/getLogin') ?>" method="POST">
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Username" class="form-control">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                     <input type="password" name="password" placeholder="password" class="form-control">
+                     <input type="password" name="password" placeholder="Password" class="form-control">
                   </div>
                   <div class="text-center">
                     <input type="submit" value="Signin" class="btn btn-primary">
