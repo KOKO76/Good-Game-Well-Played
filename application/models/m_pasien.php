@@ -11,7 +11,12 @@ class M_pasien extends CI_model {
 
 		$mhs = $this->db->query("SELECT * FROM pasien");
 		return $mhs->result_array();
-		
+	}
+
+	public function querymenambahpasien($tableName, $data){
+		$mhs = $this->db->insert($tableName, $data);
+		return $mhs;
+
 	}
 }
 ?>

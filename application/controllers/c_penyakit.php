@@ -39,7 +39,7 @@ class C_penyakit extends CI_Controller {
 				'deskripsi' => $deskripsi,
 				'penanganan' => $penanganan,
 			);
-		$mhs = $this->m_penyakit->tambahpenyakit('penyakit',$data_masukan);
+		$mhs = $this->m_penyakit->querymenambahpenyakit('penyakit',$data_masukan);
 		if($mhs >= 1){
 			if($mhs){
 			$data['pesan']='TRUE';

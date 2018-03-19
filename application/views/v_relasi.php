@@ -14,6 +14,14 @@
    </div>
 </div>
 
+<div class="col-md-">
+  <ul class="justify-content-end">
+    <br>
+       <a class="btn btn-outline-primary" href="<?php echo base_url(),"index.php/c_relasi/tambah"?>">Tambah Data Relasi</a>
+    <br>
+  </ul>
+</div>
+
 <div class="card-body">
   <div class="table-responsive">
       <table class="table table-striped table-bordered bootstrap-datatable datatable">
@@ -33,8 +41,8 @@
                 { ?>
                   <tr>
                     <td><center><?php echo $key['id_relasi'];?></center></td>
-                    <td><center><?php echo $key['id_penyakit'];?></center></td>
-                    <td><center><?php echo $key['id_gejala'];?></center></td>
+                    <td><justify-content-end><?php echo $key['nama_penyakit'];?></justify-content-end></td>
+                    <td><justify-content-end><?php echo $key['nama_gejala'];?></justify-content-end></td>
                     <td><center><?php echo $key['bobot'];?></center></td>
                     <td class="center">
                       <center>

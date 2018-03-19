@@ -7,8 +7,7 @@
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
               <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
-              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_penyakit"?>">Data Penyakit</a></li>
-              <li class="breadcrumb-item active">Tambah Data Penyakit</li>
+              <li class="breadcrumb-item">Data Penyakit</a></li>
            </ul>
           </div>
       </div>

@@ -17,4 +17,52 @@ class C_pasien extends CI_Controller {
 		$this->load->view('v_pasien', array('data' => $tabel));
 		$this->load->view('footer');
 	}
+
+	public function tambah()
+	{
+		$data['pesan']='';
+		$head['title']='Input Data Pasien';
+		$this->load->view('headerlogin', $head);
+		$this->load->view('v_daftarpasien', $data);
+		$this->load->view('footer');
+	}
+
+	public function menambahPasien(){
+		$username_p = $_POST['username_p'];
+		$password = $_POST['password'];
+		$nama_pasien = $_POST['nama_pasien'];
+		$umur = $_POST['umur'];
+		$jenis_kelamin = $_POST['jenis_kelamin'];
+		$no_tlp = $_POST['no_tlp'];
+		$alamat = $_POST['alamat'];
+				
+		$data_masukan = array(
+				'username_p' => $username_p,
+				'password' => $password,
+				'nama_pasien' => $nama_pasien,
+				'umur' => $umur,
+				'jenis_kelamin' => $jenis_kelamin,
+				'no_tlp' => $no_tlp,
+				'alamat' => $alamat,
+			);
+
+		$mhs = $this->m_pasien->querymenambahpasien('pasien',$data_masukan);
+		if($mhs >= 1){
+			if($mhs){
+			$data['pesan']='TRUE';
+			}
+			else{
+				$data['pesan']='FALSE';
+			}
+			
+			$head['title']='';
+			$this->load->view('headerlogin', $head);
+			$this->load->view('v_daftarpasien', $data);
+			$this->load->view('footer');
+
+		}
+		else{
+			echo "<h1>Insert data gagal </h1>";
+		}
+	}
 }

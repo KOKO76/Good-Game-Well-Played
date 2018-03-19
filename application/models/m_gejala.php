@@ -13,5 +13,10 @@ class M_gejala extends CI_model {
 		return $mhs->result_array();
 		
 	}
+	public function querymenambahgejala($tableName, $data){
+		$mhs = $this->db->insert($tableName, $data);
+		return $mhs;
+
+	}
 }
 ?>

@@ -14,6 +14,14 @@
    </div>
 </div>
 
+<div class="col-md-">
+  <ul class="justify-content-end">
+    <br>
+       <a class="btn btn-outline-primary" href="<?php echo base_url(),"index.php/c_gejala/tambah"?>">Tambah Data Gejala</a>
+    <br>
+  </ul>
+</div>
+
 <div class="card-body">
   <div class="table-responsive">
       <table class="table table-striped table-bordered bootstrap-datatable datatable">

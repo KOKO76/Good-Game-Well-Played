@@ -50,7 +50,7 @@
                   <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                 </ul>
                 <div class="login">
-                  <a href="<?php echo base_url(),"index.php/c_validasi/logout"?>" class="exit-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Log out</span></a></div>
+                  <a href="<?php echo base_url(),"index.php/c_validasi/logout"?>" class="exit-btn"><span class="d-none d-md-inline-block"><b> Log out <i class="fa fa-sign-out"></i></b></span></a></div>
                 </div>
             </div>
           </div>

@@ -23,7 +23,7 @@ class C_validasi extends CI_Controller {
 			$data['message']=$this->message;
 
 			/* Load View */
-			$this->load->view('header');
+			$this->load->view('headerlogin');
 			$this->load->view('v_login',$data);
 			$this->load->view('footer');
 		} 
@@ -54,7 +54,7 @@ class C_validasi extends CI_Controller {
 
 			//tampilkan pesan 
 			$data['message']=$this->message;
-			$this->load->view('header');
+			$this->load->view('headerlogin');
 			$this->load->view('v_login',$data);
 			$this->load->view('footer');
 		}
@@ -79,7 +79,7 @@ class C_validasi extends CI_Controller {
 
 				$data['message']=$this->message;
 				
-				$this->load->view('header');
+				$this->load->view('headerlogin');
 				$this->load->view('v_login',$data);
 				$this->load->view('footer');
 			}

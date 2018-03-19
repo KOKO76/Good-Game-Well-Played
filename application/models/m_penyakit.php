@@ -14,7 +14,7 @@ class M_penyakit extends CI_model {
 		
 	}
 
-	public function tambahpenyakit($tableName, $data){
+	public function querymenambahpenyakit($tableName, $data){
 		$mhs = $this->db->insert($tableName, $data);
 		return $mhs;
 
