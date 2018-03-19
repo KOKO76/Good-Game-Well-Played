@@ -18,7 +18,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
               <div class="box">
-                <form action="<?php echo site_url('c_validasi/getLogin') ?>" method="POST">
+                <form action="<?php echo site_url('c_validasi/getLogin')?>" method="POST">
                   <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" placeholder="Username" class="form-control">
@@ -28,7 +28,7 @@
                      <input type="password" name="password" placeholder="Password" class="form-control">
                   </div>
                   <div class="text-center">
-                    <input type="submit" value="Signin" class="btn btn-primary">
+                    <input type="submit" value="Login" class="btn btn-primary">
                   </div>
                 </form>
               </div>

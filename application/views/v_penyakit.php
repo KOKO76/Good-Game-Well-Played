@@ -7,11 +7,20 @@
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
               <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
-              <li class="breadcrumb-item active">Data Penyakit</li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_penyakit"?>">Data Penyakit</a></li>
+              <li class="breadcrumb-item active">Tambah Data Penyakit</li>
            </ul>
           </div>
       </div>
    </div>
+</div>
+
+<div class="col-md-">
+  <ul class="justify-content-end">
+    <br>
+       <a class="btn btn-outline-primary" href="<?php echo base_url(),"index.php/c_penyakit/tambah"?>">Tambah Data Penyakit</a>
+    <br>
+  </ul>
 </div>
 
 <div class="card-body">

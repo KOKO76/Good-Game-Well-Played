@@ -13,5 +13,11 @@ class M_penyakit extends CI_model {
 		return $mhs->result_array();
 		
 	}
+
+	public function tambahpenyakit($tableName, $data){
+		$mhs = $this->db->insert($tableName, $data);
+		return $mhs;
+
+	}
 }
 ?>
