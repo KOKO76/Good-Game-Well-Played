@@ -79,6 +79,7 @@ class C_penyakit extends CI_Controller {
 	}
 
 	public function mengubahPenyakit($id_penyakit){
+		$data['pesan']='';
 		$data = $this->m_penyakit->Getdat(" where id_penyakit = '$id_penyakit'");
 		$dat = array(
 			'id_penyakit' => $data[0]['id_penyakit'],
@@ -91,5 +92,38 @@ class C_penyakit extends CI_Controller {
 		$this->load->view('headeradmin');
 		$this->load->view('v_ubahpenyakit', $dat);
 		$this->load->view('footer');
+	}
+
+	public function ubahPenyakit(){
+		$id_penyakit = $_POST['id_penyakit'];
+		$nama_penyakit = $_POST['nama_penyakit'];
+		$deskripsi = $_POST['deskripsi'];
+		$penanganan = $_POST['penanganan'];
+				
+		$data_masukan = array(
+				'id_penyakit' => $id_penyakit,
+				'nama_penyakit' => $nama_penyakit,
+				'deskripsi' => $deskripsi,
+				'penanganan' => $penanganan,
+			);
+		$where = array('id_penyakit' => $id_penyakit );
+		$mhs = $this->m_penyakit->querymengubahpenyakit('penyakit',$data_masukan, $where);
+		if($mhs >= 1){
+			if($mhs){
+			$data['pesan']='TRUE';
+			}
+			else{
+				$data['pesan']='FALSE';
+			}
+			
+			$head['title']='';
+			$this->load->view('headeradmin', $head);
+			$this->load->view('v_tambahpenyakit', $data);
+			$this->load->view('footer');
+
+		}
+		else{
+			echo "<h1>Insert data gagal </h1>";
+		}
 	}
 }

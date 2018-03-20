@@ -21,32 +21,32 @@
 
    
 <div class="col-md-8 mx-auto">
-<form class="form-horizontal">    
+<form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_penyakit/ubahPenyakit')?>" method="POST">    
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
-                        <input type="text" value="<?php echo $id_penyakit; ?>" class="form-control">
+                        <input type="text" name="id_penyakit" value="<?php echo $id_penyakit; ?>" class="form-control">
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Nama Penyakit</b></label>
                       <div class="col-sm-10">
-                        <input type="text" value="<?php echo $nama_penyakit; ?>"  class="form-control">
+                        <input type="text" name="nama_penyakit" value="<?php echo $nama_penyakit; ?>"  class="form-control">
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Deskripsi</b></label>
                       <div class="col-sm-10">
-                        <textarea name="output" cols="85" rows="10" id="output"><?php echo $deskripsi; ?></textarea>
+                        <textarea name="deskripsi" cols="85" rows="10" id="output"><?php echo $deskripsi; ?></textarea>
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Penanganan</b></label>
                       <div class="col-sm-10">
-                        <textarea name="output" cols="85" rows="10" id="output"><?php echo $penanganan; ?></textarea>
+                        <textarea name="penanganan" cols="85" rows="10" id="output"><?php echo $penanganan; ?></textarea>
                       </div>
                     </div>
 
@@ -59,4 +59,4 @@
                   </form>
                 </div>
                 </div>
-                </section>>
+                </section>

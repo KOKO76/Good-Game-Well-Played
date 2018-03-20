@@ -25,7 +25,6 @@ class M_penyakit extends CI_model {
 	}
 
 	public function querymengubahpenyakit($tableName, $data, $where){
-
 		$mhs = $this->db->update($tableName, $data, $where);
 		return $mhs;
 	}
