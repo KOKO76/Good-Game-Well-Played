@@ -39,14 +39,14 @@
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Deskripsi</b></label>
                       <div class="col-sm-10">
-                        <input type="text" value="<?php echo $deskripsi; ?>" class="form-control">
+                        <textarea name="output" cols="85" rows="10" id="output"><?php echo $deskripsi; ?></textarea>
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Penanganan</b></label>
                       <div class="col-sm-10">
-                        <input type="text" value="<?php echo $penanganan; ?>" class="form-control">
+                        <textarea name="output" cols="85" rows="10" id="output"><?php echo $penanganan; ?></textarea>
                       </div>
                     </div>
 
