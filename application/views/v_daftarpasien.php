@@ -38,7 +38,7 @@
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Password</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="password" name="password" class="form-control">
+                        <input type="password" id="password" name="password" class="form-control">
                       </div>
                     </div>
 

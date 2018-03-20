@@ -29,7 +29,7 @@ class C_pasien extends CI_Controller {
 
 	public function menambahPasien(){
 		$username_p = $_POST['username_p'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
 		$nama_pasien = $_POST['nama_pasien'];
 		$umur = $_POST['umur'];
 		$jenis_kelamin = $_POST['jenis_kelamin'];

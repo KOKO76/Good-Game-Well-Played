@@ -38,8 +38,8 @@
                     <div class="form-grouprow has-success">
                       <label class="col-sm-2 form-control-label"><b>Penyakit</b></label>
                       <select name="nama_penyakit" class="form-control">
-                          <?php foreach ($penyakit as $pe) { ?>
-                           <option value="<?php echo $pe->nama_penyakit ?>"><?php echo $pe->nama_penyakit; ?></option>
+                          <?php foreach ($penyakitGejala as $pe) { ?>
+                           <option value="<?php echo $pe->id_penyakit ?>"><?php echo $pe->nama_penyakit; ?></option>
                            <?php } ?>
                      </select>
                     </div>
@@ -47,10 +47,9 @@
                      <div class="form-grouprow has-success">
                       <label class="col-sm-2 form-control-label"><b>Gejala</b></label>
                       <select name="nama_gejala" class="form-control">
-                           <option value="<?php echo $nama_gejala; ?>">
-                           <?php $a=$nama_gejala; 
-                           ?> 
-                           </option>
+                           <?php foreach ($penyakitGejala as $pe) { ?>
+                           <option value="<?php echo $pe->id_gejala ?>"><?php echo $pe->nama_gejala; ?></option>
+                           <?php } ?>
                      </select>
                     </div>
 
