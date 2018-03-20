@@ -50,7 +50,7 @@
                   <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                 </ul>
                 <div class="login">
-                  <a href="<?php echo base_url(),"index.php/c_validasi"?>" class="exit-btn"><span class="d-none d-md-inline-block"><b>Log in </b><i class="fa fa-user"></i></span></a></div>
+                  <a href="<?php echo base_url(),"index.php/c_validasi/logout"?>" class="exit-btn"><span class="d-none d-md-inline-block"><b> Log out <i class="fa fa-sign-out"></i></b></span></a></div>
                 </div>
             </div>
           </div>
@@ -65,8 +65,11 @@
             
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
-                <li><a href="index.html"> <i class="caret"></i>Petunjuk Penggunaan</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_pasien/tambah"?>"><i class="caret"></i>Pendaftaran Akun Pasien</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_berandapasien"?>"> <i class="caret"></i>Beranda</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_penyakit"?>"> <i class="caret"></i>Profil</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_konsultasi"?>"></i>Konsultasi</a></li>
+                <li><a href="index.html"> <i class="caret"></i>Riwayat</a></li>
+                <li><a href="index.html"> <i class="caret"></i>Info Penyakit</a></li>
               </ul>
             </div>
             <div id="search" class="collapse clearfix">

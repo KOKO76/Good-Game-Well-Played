@@ -1,13 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login_controller extends CI_Controller {
+class C_validasi extends CI_Controller {
+
 
 	function __construct()
 	{
 		parent::__construct();
 
-		$this->load->library('login_model');
+		$this->load->library('m_validasi');
 	}
 
 	
@@ -15,15 +16,15 @@ class Login_controller extends CI_Controller {
 
 	public function index()
 	{
-		if (!$this->login_model->isLoggedIn()) 
+		if (!$this->m_validasi->isLoggedIn()) 
 		{
 			/* Data */
 			$data['title']="Login";
 			$data['message']=$this->message;
 
 			/* Load View */
-			$this->load->view('header');
-			$this->load->view('login_view',$data);
+			$this->load->view('headerlogin');
+			$this->load->view('v_login',$data);
 			$this->load->view('footer');
 		} 
 		elseif ($this->session->userdata('level')==1) 
@@ -53,22 +54,22 @@ class Login_controller extends CI_Controller {
 
 			//tampilkan pesan 
 			$data['message']=$this->message;
-			$this->load->view('header');
-			$this->load->view('login_view',$data);
+			$this->load->view('headerlogin');
+			$this->load->view('v_login',$data);
 			$this->load->view('footer');
 		}
 		else
 		{
-			$result= $this->login_model->login($u, $p);
+			$result= $this->m_validasi->login($u, $p);
 			if ($result==TRUE && $this->session->userdata('level')==1)
 			{
 				// panggil fungsi cekUserPass di MyModel
-				redirect('#');
+				redirect('c_berandaadmin');
 			}
-			// $result = $this->login_model->login1($u, $p);
-			elseif ($this->login_model->login1($u,$p)) 
+			// $result = $this->m_validasi->login1($u, $p);
+			elseif ($this->m_validasi->login1($u,$p)) 
 			{
-				redirect('berita');
+				redirect('c_berandapasien');
 			}
 			else
 			{
@@ -78,8 +79,8 @@ class Login_controller extends CI_Controller {
 
 				$data['message']=$this->message;
 				
-				$this->load->view('header');
-				$this->load->view('login_view',$data);
+				$this->load->view('headerlogin');
+				$this->load->view('v_login',$data);
 				$this->load->view('footer');
 			}
 		}

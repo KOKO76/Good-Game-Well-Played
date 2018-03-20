@@ -2,7 +2,7 @@
           <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                <p>&copy; 2018. Your company / name goes here</p>
+                <p>&copy; 2018. Program Studi Informatika Fakultas Teknik</p>
               </div>
               <div class="col-sm-6 text-right">
                 <p>Dina Hastari <a href="https://bootstrapious.com/free-templates">F1D014025 </a></p>
