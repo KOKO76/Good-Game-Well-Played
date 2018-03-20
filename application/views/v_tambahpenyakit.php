@@ -26,6 +26,7 @@
                   </div>';
               }
             ?>  
+<<<<<<< HEAD
 <script type="text/javascript">
 function validateForm() {
       var x = document.forms["penyakit"]["id_penyakit"].value;
@@ -43,6 +44,10 @@ function validateForm() {
 
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_penyakit/menambahPenyakit')?>" method="POST" name="penyakit" onsubmit="return validateForm()">    
+=======
+<div class="col-md-8 mx-auto">
+<form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_penyakit/menambahPenyakit')?>" method="POST">    
+>>>>>>> upstream/master
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
@@ -80,4 +85,9 @@ function validateForm() {
                   </form>
                 </div>
                 </div>
+<<<<<<< HEAD
                 </section>
+=======
+                </section>
+
+>>>>>>> upstream/master

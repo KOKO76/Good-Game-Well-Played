@@ -9,7 +9,11 @@ class M_relasi extends CI_model {
 
 	public function getTabel(){
 
+<<<<< HEAD
 		$mhs = $this->db->query("SELECT relasi.id_relasi, gejala.nama_gejala,penyakit.nama_penyakit, relasi.bobot
+=======
+		$mhs = $this->db->query("SELECT relasi.id_relasi, gejala.id_gejala, gejala.nama_gejala,penyakit.id_penyakit, penyakit.nama_penyakit, relasi.bobot
+>>>>>>> upstream/master
 				FROM relasi JOIN gejala on relasi.id_gejala = gejala.id_gejala JOIN penyakit on  penyakit.id_penyakit = relasi.id_penyakit");
 		return $mhs->result_array();	
 	}
