@@ -13,5 +13,10 @@ class M_riwayat extends CI_model {
 				FROM pasien JOIN riwayat on pasien.username_p = riwayat.username_p JOIN gejala on gejala.id_gejala = riwayat.id_gejala JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit");
 		return $mhs->result_array();	
 	}
+
+	public function querymenghapusriwayat($tableName,$where){
+		$mhs= $this->db->delete($tableName,$where);
+		return $mhs;
+	}
 }
 ?>

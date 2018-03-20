@@ -59,4 +59,23 @@ class C_relasi extends CI_Controller {
 			echo "<h1>Insert data gagal </h1>";
 		}
 	}
+
+	public function menghapusRelasi($id_relasi)
+	{
+		$where = array('id_relasi' => $id_relasi);
+
+		$mhs = $this->m_relasi->querymenghapusrelasi('relasi', $where);
+
+		if($mhs >= 1){
+			
+		$head['title']='Daftar Relasi';
+		$mhs = $this->m_relasi->getTabel('relasi');
+		$this->load->view('headeradmin',$head);
+		$this->load->view('v_relasi' , array('data' => $mhs));
+		$this->load->view('footer');
+
+		}else{
+			echo "<h1>hapus data gagal </h1>";
+		}
+	}
 }

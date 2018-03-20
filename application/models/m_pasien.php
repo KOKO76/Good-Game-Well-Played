@@ -16,7 +16,12 @@ class M_pasien extends CI_model {
 	public function querymenambahpasien($tableName, $data){
 		$mhs = $this->db->insert($tableName, $data);
 		return $mhs;
-
 	}
+
+	public function querymenghapuspasien($tableName,$where){
+		$mhs= $this->db->delete($tableName,$where);
+		return $mhs;
+	}
+
 }
 ?>

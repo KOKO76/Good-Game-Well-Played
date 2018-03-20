@@ -19,11 +19,17 @@ class M_relasi extends CI_model {
 		return $mhs;
 	}
 
+	public function querymenghapusrelasi($tableName,$where){
+		$mhs= $this->db->delete($tableName,$where);
+		return $mhs;
+	}
 
-	public function get_nama_gejala(){
+	/*public function get_nama_gejala(){
 		$get = $this->db->query("SELECT gejala.nama_gejala FROM gejala JOIN relasi on gejala.id_gejala=relasi.id_gejala");
 		return $get->result_array;
 	}
+*/
+
 
 }
 ?>

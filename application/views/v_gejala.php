@@ -42,10 +42,10 @@
                     <td><justify-content-end><?php echo $key['nama_gejala'];?></justify-content-end></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info" href="<?php echo base_url()."index.php/c_gejala/mengubahGejala/".$key['id_gejala']; ?>">
                           <i class="fa fa-edit"></i>                    
                         </a>
-                        <a class="btn btn-danger" href="##">
+                        <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_gejala/menghapusGejala/".$key['id_gejala']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>
                       </center>
