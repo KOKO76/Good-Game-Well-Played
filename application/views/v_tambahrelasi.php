@@ -39,7 +39,7 @@
                       <label class="col-sm-2 form-control-label"><b>Penyakit</b></label>
                       <select name="nama_penyakit" class="form-control">
                           <?php foreach ($penyakitGejala as $pe) { ?>
-                           <option value="<?php echo $pe->id_penyakit ?>"><?php echo $pe->nama_penyakit; ?></option>
+                           <option value="<?php echo $pe['id_penyakit'] ?>"><?php echo $pe['nama_penyakit']; ?></option>
                            <?php } ?>
                      </select>
                     </div>
@@ -48,7 +48,7 @@
                       <label class="col-sm-2 form-control-label"><b>Gejala</b></label>
                       <select name="nama_gejala" class="form-control">
                            <?php foreach ($penyakitGejala as $pe) { ?>
-                           <option value="<?php echo $pe->id_gejala ?>"><?php echo $pe->nama_gejala; ?></option>
+                           <option value="<?php echo $pe['id_gejala'] ?>"><?php echo $pe['nama_gejala']; ?></option>
                            <?php } ?>
                      </select>
                     </div>
