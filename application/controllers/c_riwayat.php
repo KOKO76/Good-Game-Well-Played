@@ -17,4 +17,23 @@ class C_riwayat extends CI_Controller {
 		$this->load->view('v_riwayat', array('data' => $tabel));
 		$this->load->view('footer');
 	}
+
+	public function menghapusRiwayat($id_riwayat)
+	{
+		$where = array('id_riwayat' => $id_riwayat );
+
+		$mhs = $this->m_riwayat->querymenghapusriwayat('riwayat', $where);
+
+		if($mhs >= 1){
+			
+		$head['title']='Daftar Riwayat';
+		$mhs = $this->m_riwayat->getTabel('riwayat');
+		$this->load->view('headeradmin',$head);
+		$this->load->view('v_riwayat' , array('data' => $mhs));
+		$this->load->view('footer');
+
+		}else{
+			echo "<h1>hapus data gagal </h1>";
+		}
+	}
 }

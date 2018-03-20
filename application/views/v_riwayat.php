@@ -42,7 +42,7 @@
                     <td><center><?php echo $key['tanggal'];?></center></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-danger" href="##">
+                        <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_riwayat/menghapusRiwayat/".$key['id_riwayat']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>
                       </center>

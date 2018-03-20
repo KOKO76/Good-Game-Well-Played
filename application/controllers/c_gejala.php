@@ -55,4 +55,36 @@ class C_gejala extends CI_Controller {
 			echo "<h1>Insert data gagal </h1>";
 		}
 	}
+
+	public function menghapusGejala($id_gejala)
+	{
+		$where = array('id_gejala' => $id_gejala);
+
+		$mhs = $this->m_gejala->querymenghapusgejala('gejala', $where);
+
+		if($mhs >= 1){
+			
+		$head['title']='Daftar Gejala';
+		$mhs = $this->m_gejala->getTabel('gejala');
+		$this->load->view('headeradmin',$head);
+		$this->load->view('v_gejala' , array('data' => $mhs));
+		$this->load->view('footer');
+
+		}else{
+			echo "<h1>hapus data gagal </h1>";
+		}
+	}
+
+	public function mengubahGejala($id_gejala){
+		$data = $this->m_gejala->Getdat(" where id_gejala = '$id_gejala'");
+		$dat = array(
+			'id_gejala' => $data[0]['id_gejala'],
+			'nama_gejala' => $data[0]['nama_gejala'],
+			);
+
+		$data['title']='Ubah Data Penyakit';
+		$this->load->view('headeradmin');
+		$this->load->view('v_ubahgejala', $dat);
+		$this->load->view('footer');
+	}
 }

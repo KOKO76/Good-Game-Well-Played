@@ -46,10 +46,10 @@
                     <td><justify-content-end><?php echo $key['penanganan'];?></justify-content-end></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info" href="<?php echo base_url()."index.php/c_penyakit/mengubahPenyakit/".$key['id_penyakit']; ?>">
                           <i class="fa fa-edit"></i>                    
                         </a>
-                        <a class="btn btn-danger" href="##">
+                        <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_penyakit/menghapusPenyakit/".$key['id_penyakit']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>
                       </center>

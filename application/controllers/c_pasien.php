@@ -65,4 +65,23 @@ class C_pasien extends CI_Controller {
 			echo "<h1>Insert data gagal </h1>";
 		}
 	}
+
+	public function menghapusPasien($username_p)
+	{
+		$where = array('username_p' => $username_p );
+
+		$mhs = $this->m_pasien->querymenghapuspasien('pasien', $where);
+
+		if($mhs >= 1){
+			
+		$head['title']='Daftar Pasien';
+		$mhs = $this->m_pasien->getTabel('pasien');
+		$this->load->view('headeradmin',$head);
+		$this->load->view('v_pasien' , array('data' => $mhs));
+		$this->load->view('footer');
+
+		}else{
+			echo "<h1>hapus data gagal </h1>";
+		}
+	}
 }

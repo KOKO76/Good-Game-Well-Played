@@ -18,5 +18,21 @@ class M_gejala extends CI_model {
 		return $mhs;
 
 	}
+
+	public function querymenghapusgejala($tableName,$where){
+		$mhs= $this->db->delete($tableName,$where);
+		return $mhs;
+	}
+
+	public function querymengubahgejala($tableName, $data, $where){
+
+		$mhs = $this->db->update($tableName, $data, $where);
+		return $mhs;
+	}
+
+	public function getdat($id_gejala=""){
+		$mhs = $this->db->query("SELECT * FROM gejala".$id_gejala);
+		return $mhs->result_array();
+	}
 }
 ?>
