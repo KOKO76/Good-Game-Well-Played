@@ -1,4 +1,4 @@
-<?php
+s<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class C_relasi extends CI_Controller {
@@ -22,10 +22,9 @@ class C_relasi extends CI_Controller {
 	{
 		$data['pesan']='';
 		$head['title']='Input Data Relasi';
-/*<<<<<<< HEAD
-=======*/
+
 		$data['penyakitGejala'] = $this->m_relasi->getTabel();
-/*>>>>>>> upstream/master*/
+
 		$this->load->view('headeradmin', $head);
 		$this->load->view('v_tambahrelasi', $data);
 		$this->load->view('footer');
