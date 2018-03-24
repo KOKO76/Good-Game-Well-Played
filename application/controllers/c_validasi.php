@@ -44,22 +44,6 @@ class C_validasi extends CI_Controller {
 		$u = $this->input->post('username');
 		$p = $this->input->post('password');
 
-
-		//cek kosong apa tidak 
-		if ($u == ""|| $p == ""){
-
-			$data['title']="Login";
-			$this->message="Username atau Password Tidak Boleh Kosong";
-			$data['message']=$this->message;
-
-			//tampilkan pesan 
-			$data['message']=$this->message;
-			$this->load->view('headerlogin');
-			$this->load->view('v_login',$data);
-			$this->load->view('footer');
-		}
-		else
-		{
 			$result= $this->m_validasi->login($u, $p);
 			if ($result==TRUE && $this->session->userdata('level')==1)
 			{
@@ -83,7 +67,6 @@ class C_validasi extends CI_Controller {
 				$this->load->view('v_login',$data);
 				$this->load->view('footer');
 			}
-		}
 	}
 
 	

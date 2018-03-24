@@ -101,8 +101,8 @@
 
                      <div class="form-group row">
                       <div class="col-sm-4 offset-sm-2">
-                        <button type="reset" class="btn btn-secondary">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                       </div>
                     </div>
                   </form>

@@ -45,5 +45,6 @@ class M_relasi extends CI_model {
 		$mhs = $this->db->query("SELECT * FROM relasi".$id_relasi);
 		return $mhs->result_array();
 	}
+
 }
 ?>

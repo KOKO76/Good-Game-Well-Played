@@ -22,9 +22,13 @@
    
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_relasi/ubahRelasi')?>" method="POST">    
-                    <div class="form-group row has-success">
+                    
+
+                      <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
+                       
+
                         <input type="text" name="id_relasi" value="<?php echo $id_relasi; ?>" class="form-control">
                       </div>
                     </div>
@@ -33,9 +37,11 @@
                       <label class="col-sm-2 form-control-label"><b>Penyakit</b></label>
                         <div class="col-sm-10">
                            <select name="id_penyakit" class="form-control">
-                                <?php foreach ($penyakit as $pe) { ?>
-                                 <option value="<?php echo $pe['id_penyakit'] ?>"><?php echo $pe['nama_penyakit']; ?></option>
-                                 <?php } ?>
+                                <?php foreach ($nama_penyakit as $pe) { ?>
+                                 <option value="<?php echo $pe['id_penyakit'] ?>" 
+                                    <?php if($pe['id_penyakit']==$id_penyakit) echo 'selected';  ?>>
+                                    <?php echo $pe['nama_penyakit']; ?></option>
+                                <?php } ?>
                            </select>
                       </div>
                     </div>
@@ -43,9 +49,11 @@
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Gejala</b></label>
                         <div class="col-sm-10">
-                           <select name="id_penyakit" class="form-control">
-                                <?php foreach ($gejala as $pe) { ?>
-                                 <option value="<?php echo $pe['id_gejala'] ?>"><?php echo $pe['nama_gejala']; ?></option>
+                           <select name="id_gejala" class="form-control">
+                                <?php foreach ($nama_gejala as $pe) { ?>
+                                 <option value="<?php echo $pe['id_gejala'] ?>"
+                                 <?php if($pe['id_gejala']==$id_gejala) echo 'selected';  ?>>
+                                 <?php echo $pe['nama_gejala']; ?></option>
                                  <?php } ?>
                            </select>
                       </div>

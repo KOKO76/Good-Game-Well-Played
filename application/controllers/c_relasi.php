@@ -68,13 +68,16 @@ class C_relasi extends CI_Controller {
 
 		$data['pesan']='';
 		$data = $this->m_relasi->Getdat(" where id_relasi = '$id_relasi'");
-		$data['penyakit'] = $this->m_relasi->getPenyakit();
-		$data['gejala'] = $this->m_relasi->getGejala();
+		$data1 = $this->m_relasi->getPenyakit();
+		$data2= $this->m_relasi->getGejala();
+
 
 		$dat = array(
 			'id_relasi' => $data[0]['id_relasi'],
 			'id_penyakit' => $data[0]['id_penyakit'],
 			'id_gejala' => $data[0]['id_gejala'],
+			'nama_penyakit'=> $data1,
+			'nama_gejala'=> $data2,
 			'bobot' => $data[0]['bobot'],
 			);
 
@@ -105,19 +108,19 @@ class C_relasi extends CI_Controller {
 
 	public function ubahRelasi(){
 
-
-
-		$id_relasi = $_POST['id_relasi'];
+		$id_relasi = $_POST['id_relasi1'];
 		$id_penyakit = $_POST['id_penyakit'];
 		$id_gejala = $_POST['id_gejala'];
 		$bobot = $_POST['bobot'];
 				
 		$data_masukan = array(
-				'id_relasi' => $id_relasi,
-				'id_penyakit' => $nama_penyakit,
-				'id_gejala' => $deskripsi,
+				'id_relasi' => $this->input->post('$id_relasi'),
+				'id_penyakit' => $id_penyakit,
+				'id_gejala' => $id_gejala,
 				'bobot' => $bobot,
 			);
+
+
 		$where = array('id_relasi' => $id_relasi );
 		$mhs = $this->m_relasi->querymengubahrelasi('relasi',$data_masukan, $where);
 		if($mhs >= 1){
