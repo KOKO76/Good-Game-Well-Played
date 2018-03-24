@@ -10,6 +10,21 @@
               <li class="breadcrumb-item active">Konsultasi</li>
            </ul>
           </div>
+          <div class="col-md-7">
+            <form method="POST" action="<?php echo site_url('c_konsultasi/diagnosa'); ?>">
+              <?php foreach ($gejala->result() as $row): ?>
+                <!-- 
+                name="gejala[]" gejala[] ini bertipe array
+                jadi checbox yang di centang akan di simpan datanya ke dalam 
+                variable array gejala.
+                 -->
+                <input type="checkbox" name="gejala[]" value="<?= $row->id_gejala; ?>"> <?= $row->nama_gejala; ?>
+                <br>
+              <?php endforeach ?>
+
+              <button type="submit"> Diagnosa</button>
+            </form> 
+          </div>
       </div>
    </div>
 </div>
