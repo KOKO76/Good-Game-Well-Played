@@ -30,6 +30,7 @@
                        
 
                         <input type="text" name="id_relasi" value="<?php echo $id_relasi; ?>" class="form-control">
+                        <input type="hidden" name="id_relasi2" value="<?php echo $id_relasi; ?>" class="form-control">
                       </div>
                     </div>
 

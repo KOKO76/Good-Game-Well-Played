@@ -108,20 +108,21 @@ class C_relasi extends CI_Controller {
 
 	public function ubahRelasi(){
 
-		$id_relasi = $_POST['id_relasi1'];
-		$id_penyakit = $_POST['id_penyakit'];
-		$id_gejala = $_POST['id_gejala'];
-		$bobot = $_POST['bobot'];
+		$id_relasi 		= $_POST['id_relasi'];
+		$id_relasi2 	= $_POST['id_relasi2'];
+		$id_penyakit 	= $_POST['id_penyakit'];
+		$id_gejala 		= $_POST['id_gejala'];
+		$bobot 				= $_POST['bobot'];
 				
 		$data_masukan = array(
-				'id_relasi' => $this->input->post('$id_relasi'),
+				'id_relasi' 	=> $id_relasi,
 				'id_penyakit' => $id_penyakit,
-				'id_gejala' => $id_gejala,
-				'bobot' => $bobot,
+				'id_gejala' 	=> $id_gejala,
+				'bobot' 			=> $bobot,
 			);
 
 
-		$where = array('id_relasi' => $id_relasi );
+		$where = array('id_relasi' => $id_relasi2 );
 		$mhs = $this->m_relasi->querymengubahrelasi('relasi',$data_masukan, $where);
 		if($mhs >= 1){
 			if($mhs){
