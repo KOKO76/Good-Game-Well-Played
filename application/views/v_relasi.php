@@ -2,12 +2,12 @@
     <div class="container">
        <div class="row d-flex align-items-center flex-wrap">
           <div class="col-md-7">
-            <h1 class="h2">Data Penyakit</h1>
+            <h1 class="h2">Data Relasi</h1>
           </div>
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
               <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
-              <li class="breadcrumb-item active">Data Penyakit</li>
+              <li class="breadcrumb-item active">Data Relasi</li>
            </ul>
           </div>
       </div>
@@ -46,7 +46,7 @@
                     <td><center><?php echo $key['bobot'];?></center></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info" href="<?php echo base_url()."index.php/c_relasi/mengubahRelasi/".$key['id_relasi']; ?>">
                           <i class="fa fa-edit"></i>                    
                         </a>
                         <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_relasi/menghapusRelasi/".$key['id_relasi']; ?>">

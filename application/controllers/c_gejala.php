@@ -28,6 +28,7 @@ class C_gejala extends CI_Controller {
 	}
 
 	public function menambahGejala(){
+		$data['pesan']='';
 		$id_gejala = $_POST['id_gejala'];
 		$nama_gejala = $_POST['nama_gejala'];
 				
@@ -86,5 +87,34 @@ class C_gejala extends CI_Controller {
 		$this->load->view('headeradmin');
 		$this->load->view('v_ubahgejala', $dat);
 		$this->load->view('footer');
+	}
+
+	public function ubahGejala(){
+		$id_gejala = $_POST['id_gejala'];
+		$nama_gejala = $_POST['nama_gejala'];
+				
+		$data_masukan = array(
+				'id_gejala' => $id_gejala,
+				'nama_gejala' => $nama_gejala,
+			);
+		$where = array('id_gejala' => $id_gejala );
+		$mhs = $this->m_gejala->querymengubahgejala('gejala',$data_masukan, $where);
+		if($mhs >= 1){
+			if($mhs){
+			$data['pesan']='TRUE';
+			}
+			else{
+				$data['pesan']='FALSE';
+			}
+			
+			$head['title']='';
+			$this->load->view('headeradmin', $head);
+			$this->load->view('v_tambahgejala', $data);
+			$this->load->view('footer');
+
+		}
+		else{
+			echo "<h1>Insert data gagal </h1>";
+		}
 	}
 }

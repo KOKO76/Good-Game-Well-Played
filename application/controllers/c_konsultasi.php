@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * Ini digunakan untuk mencoba metode demptser shafer
 */
-class v_konsultasi extends CI_Controller
+class c_konsultasi extends CI_Controller
 {
 	
 	function __construct()

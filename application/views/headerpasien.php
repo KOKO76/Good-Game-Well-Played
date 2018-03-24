@@ -60,14 +60,14 @@
       <!-- Navbar Start-->
       <header class="nav-holder make-sticky">
         <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-          <div class="container"><a href="index.html" class="navbar-brand home"><img src="<?php echo base_url("assets/img/")?>logo3.png" class="d-none d-md-inline-block"><img src="<?php echo base_url("assets/img/")?>logoberanda.png" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
+          <div class="container"><a href="index.html" class="navbar-brand home"><img src="<?php echo base_url("assets/img/")?>logoberanda.png" class="d-none d-md-inline-block"><img src="<?php echo base_url("assets/img/")?>logoberanda.png" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
             <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
             
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
                 <li><a href="<?php echo base_url(),"index.php/c_berandapasien"?>"> <i class="caret"></i>Beranda</a></li>
                 <li><a href="<?php echo base_url(),"index.php/c_penyakit"?>"> <i class="caret"></i>Profil</a></li>
-                <li><a href="<?php echo base_url(),"index.php/c_konsultasi"?>"></i>Konsultasi</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_konsultasi"?>"> </i>Konsultasi</a></li>
                 <li><a href="index.html"> <i class="caret"></i>Riwayat</a></li>
                 <li><a href="index.html"> <i class="caret"></i>Info Penyakit</a></li>
               </ul>
