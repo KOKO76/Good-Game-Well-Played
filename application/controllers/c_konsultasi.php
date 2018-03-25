@@ -13,7 +13,8 @@ class c_konsultasi extends CI_Controller
 
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$this->load->model('m_konsultasi');
+    $this->load->model('m_konsultasi');
+		$this->load->model('m_riwayat');
 	}
 
 	public function index()
@@ -103,12 +104,31 @@ class c_konsultasi extends CI_Controller
       // echo "Terdeteksi penyakit <b>{$result[0][0]}</b> dengan derajat kepercayaan ".round($densitas_baru[$codes[0]]*100,2)."%";
 
 	    // Simpan hasil akhir ke riwayat
+
+      // start membuat id_riwayat
+      $idRiwayatTerbaru = $this->m_riwayat->getLastDataRiwayat();
+      $akhirBulan       = date("t", strtotime(@$idRiwayatTerbaru[0]['tanggal']));
+      $tanggal          = substr(@$idRiwayatTerbaru[0]['tanggal'], 8,2);
+      $noUrut           = 0;
+
+      if($tanggal == $akhirBulan || $tanggal == NULL)
+      {
+        $noUrut  += 1;
+      } else 
+      {
+        $noUrut   = (int) substr($idRiwayatTerbaru[0]['id_riwayat'], 4) + 1 ;
+      }
+
+      $id_riwayat = date("m") ."". substr(date("Y"), 2) ."".$noUrut;
+      // end
+
       $id_penyakit  = $hasil_akhir[0]['id_penyakit'];
       $id_gejala    = implode(",", $selected);
       $username_p   = $_SESSION['username'];
       $presentase   = round($densitas_baru[$codes[0]]*100,2);
           
       $data_masukan = array(
+          'id_riwayat'  => $id_riwayat,
           'id_penyakit' => $id_penyakit,
           'id_gejala'   => $id_gejala,
           'username_p'  => $username_p,
