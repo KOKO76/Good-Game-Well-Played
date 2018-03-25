@@ -130,7 +130,7 @@ class c_konsultasi extends CI_Controller
       $this->data['nilai']				= round($densitas_baru[$codes[0]]*100,2);
 
       /* Load View */
-      $this->load->view('headeradmin');
+      $this->load->view('headerpasien');
       $this->load->view('v_hasildiagnosa', $this->data);
       $this->load->view('footer');
     }		
