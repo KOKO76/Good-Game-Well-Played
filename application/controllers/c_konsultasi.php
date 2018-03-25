@@ -40,10 +40,82 @@ class c_konsultasi extends CI_Controller
       $evidence       = $this->m_konsultasi->getMassFunction($selected);
       $densitasAwal   = $this->m_konsultasi->getDensitasAwal($selected);
 
+      $densitas_baru=array();
+		  while(!empty($evidence))
+		  {
+		      $densitas1[0]=array_shift($evidence); 
+		      $densitas1[1]=array($environment[0]["environment"],1-$densitas1[0][1]);
+
+		      $densitas2=array();
+		      if(empty($densitas_baru))
+		      {
+		        $densitas2[0]=array_shift($evidence);
+		      }else{
+		          foreach($densitas_baru as $k=>$r){
+		              if($k!="&theta;"){
+		                  $densitas2[]=array($k,$r);
+		              }
+		          }
+		      }
+
+		      $theta=1;
+		      foreach($densitas2 as $d) $theta-=$d[1];
+		      $densitas2[]=array($environment[0]["environment"],$theta);
+
+		      $m=count($densitas2);
+
+		      $densitas_baru=array();
+
+		      for($y=0;$y<$m;$y++){
+		        for($x=0;$x<2;$x++){
+		          if(!($y==$m-1 && $x==1))
+		          { 
+		            $v=explode(',',$densitas1[$x][0]);
+		            $w=explode(',',$densitas2[$y][0]);
+		            sort($v); 
+		            sort($w);
+		            $vw=array_intersect($v,$w);
+
+		            if(empty($vw))
+		            {
+		              $k="&theta;";
+		            }else{
+		                $k=implode(',',$vw);
+		            }
+
+		            if(!isset($densitas_baru[$k]))
+		            {
+		              $densitas_baru[$k]=$densitas1[$x][1]*$densitas2[$y][1];
+		            }else{
+		              $densitas_baru[$k]+=$densitas1[$x][1]*$densitas2[$y][1];
+		            } 
+		          }
+		        }
+
+		        foreach($densitas_baru as $k=>$d)
+		        {
+		          if($k!="&theta;"){
+		            $densitas_baru[$k]=$d/(1-(isset($densitas_baru["&theta;"])?$densitas_baru["&theta;"]:0));
+		          }
+		        }
+		      }
+		  }
+
+			// Perangkingan
+	    unset($densitas_baru["&theta;"]);
+	    arsort($densitas_baru);
+	    
+	    // HASIL AKHIR
+	    $codes 				= array_keys($densitas_baru); 
+	    $final_codes	= explode(',',$codes[0]); 
+	    $hasil_akhir	= $this->m_konsultasi->final_codes($final_codes);
+
+	    // echo "Terdeteksi penyakit <b>{$result[0][0]}</b> dengan derajat kepercayaan ".round($densitas_baru[$codes[0]]*100,2)."%"; 
+
       /* Data */
-      $this->data['environment']  = $environment;
-      $this->data['evidence']     = $evidence;
       $this->data['densitasAwal'] = $densitasAwal;
+      $this->data['hasil_akhir']	= $hasil_akhir;
+      $this->data['nilai']				= round($densitas_baru[$codes[0]]*100,2);
 
       /* Load View */
       $this->load->view('headeradmin');

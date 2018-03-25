@@ -18,6 +18,7 @@ class m_konsultasi extends CI_Model {
 		return $query;
 	}
 
+	// mengambil densitas awal setiap gejala yang dipilih
 	public function getDensitasAwal($selected)
 	{
 		$query = $this->db->query("
@@ -60,7 +61,7 @@ class m_konsultasi extends CI_Model {
 	public function final_codes($final_codes) 
 	{
 		$query = $this->db->query("
-			SELECT GROUP_CONCAT(nama_penyakit)  AS '0'
+			SELECT GROUP_CONCAT(nama_penyakit)  AS '0', deskripsi, penanganan, nama_penyakit
 			FROM penyakit  
 			WHERE id_penyakit IN ('".implode("','", $final_codes)."') 
 			");
