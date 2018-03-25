@@ -18,6 +18,16 @@ class M_riwayat extends CI_model {
 		return $mhs->result_array();	
 	}
 
+	public function getLastDataRiwayat()
+	{
+		$this->db->select('id_riwayat,tanggal');
+		$this->db->order_by('id_riwayat', 'DESC');
+		$this->db->limit(1);
+		$query = $this->db->get('riwayat');
+
+		return $query->result_array();
+	}
+
 	public function querymenambahriwayat($tableName, $data)
 	{
 		$this->db->insert('riwayat', $data);
