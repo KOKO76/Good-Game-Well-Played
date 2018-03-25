@@ -30,7 +30,7 @@
         <tbody>
           <?php 
               $no = 0;
-              foreach ($densitasAwal as $key => $value) { $no++;?>
+              foreach ($dataGejala as $key => $value) { $no++;?>
                     <tr class="success">
                       <td><?= $no ?></td>
                       <td><?= $value['nama_gejala'] ?></td>
@@ -59,7 +59,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <p>
+        <p style="text-align: justify;">
           <strong>DESKRIPSI :</strong> <br>
           <?= $hasil_akhir[0]['deskripsi']; ?> <br><br>
           <strong>PENANGANAN :</strong> <br>
