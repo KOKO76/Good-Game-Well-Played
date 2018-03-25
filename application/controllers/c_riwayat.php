@@ -12,6 +12,8 @@ class C_riwayat extends CI_Controller {
 
 	public function daftar(){
 		$tabel = $this->m_riwayat->getTabel();
+
+		// print_r($tabel); exit();
 		$data['title']="Daftar Riwayat";
 		$this->load->view('headeradmin');
 		$this->load->view('v_riwayat', array('data' => $tabel));
