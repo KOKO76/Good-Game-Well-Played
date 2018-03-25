@@ -126,4 +126,13 @@ class C_penyakit extends CI_Controller {
 			echo "<h1>Insert data gagal </h1>";
 		}
 	}
+
+		public function infopenyakit(){
+		$tabel = $this->m_penyakit->getTabel();
+		$data['title']="Info Penyakit";
+		$this->load->view('headerpasien');
+		$this->load->view('v_infopenyakit', array('data' => $tabel));
+		$this->load->view('footer');
+	}
+
 }
