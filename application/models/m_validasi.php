@@ -46,6 +46,7 @@ class M_validasi extends CI_Model{
               foreach ($query->result() as $row){ 
                   $data = array(
                               'username'=> $row->username_p,
+                              'level'   => 'pasien',
                               'logged_in'=>TRUE
                           );
               }

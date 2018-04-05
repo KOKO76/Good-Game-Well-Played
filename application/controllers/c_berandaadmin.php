@@ -20,9 +20,17 @@ class C_berandaadmin extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('headeradmin');
-		$this->load->view('berandaadmin');
-		$this->load->view('footer');
+		if ($this->session->userdata('level')==1) 
+		{
+			$this->load->view('headeradmin');
+			$this->load->view('berandaadmin');
+			$this->load->view('footer');
+		}
+		else
+		{
+			redirect('c_validasi');
+		}
+		
 
 	}
 }

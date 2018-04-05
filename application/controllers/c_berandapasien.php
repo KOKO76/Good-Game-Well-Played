@@ -20,9 +20,18 @@ class C_berandapasien extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('headerpasien');
-		$this->load->view('berandapasien');
-		$this->load->view('footer');
+		if ($this->session->userdata('level')==='pasien') 
+		{
+			$this->load->view('headerpasien');
+			$this->load->view('berandapasien');
+			$this->load->view('footer');
+		}
+		else 
+		{
+			redirect('c_validasi');
+		}
+
+		
 
 	}
 }

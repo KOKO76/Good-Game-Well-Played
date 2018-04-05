@@ -11,77 +11,109 @@ class C_pasien extends CI_Controller {
 	}
 
 	public function daftar(){
-		$tabel = $this->m_pasien->getTabel();
-		$data['title']="Daftar Pasien";
-		$this->load->view('headeradmin');
-		$this->load->view('v_pasien', array('data' => $tabel));
-		$this->load->view('footer');
+		if ($this->session->userdata('level')==1) 
+		{
+			$tabel = $this->m_pasien->getTabel();
+			$data['title']="Daftar Pasien";
+			$this->load->view('headeradmin');
+			$this->load->view('v_pasien', array('data' => $tabel));
+			$this->load->view('footer');
+		}
+		else
+		{
+			redirect('c_validasi');
+		}
+		
 	}
 
 	public function tambah()
 	{
-		$data['pesan']='';
-		$head['title']='Input Data Pasien';
-		$this->load->view('headerlogin', $head);
-		$this->load->view('v_daftarpasien', $data);
-		$this->load->view('footer');
-	}
-
-	public function menambahPasien(){
-		$username_p = $_POST['username_p'];
-		$password = md5($_POST['password']);
-		$nama_pasien = $_POST['nama_pasien'];
-		$umur = $_POST['umur'];
-		$jenis_kelamin = $_POST['jenis_kelamin'];
-		$no_tlp = $_POST['no_tlp'];
-		$alamat = $_POST['alamat'];
-				
-		$data_masukan = array(
-				'username_p' => $username_p,
-				'password' => $password,
-				'nama_pasien' => $nama_pasien,
-				'umur' => $umur,
-				'jenis_kelamin' => $jenis_kelamin,
-				'no_tlp' => $no_tlp,
-				'alamat' => $alamat,
-			);
-
-		$mhs = $this->m_pasien->querymenambahpasien('pasien',$data_masukan);
-		if($mhs >= 1){
-			if($mhs){
-			$data['pesan']='TRUE';
-			}
-			else{
-				$data['pesan']='FALSE';
-			}
-			
-			$head['title']='';
+		if ($this->session->userdata('level')==1) 
+		{
+			$data['pesan']='';
+			$head['title']='Input Data Pasien';
 			$this->load->view('headerlogin', $head);
 			$this->load->view('v_daftarpasien', $data);
 			$this->load->view('footer');
+		}
+		else
+		{
+			redirect('c_validasi');
+		}
+		
+	}
 
+	public function menambahPasien(){
+		if ($this->session->userdata('level')==1) 
+		{
+			$username_p = $_POST['username_p'];
+			$password = md5($_POST['password']);
+			$nama_pasien = $_POST['nama_pasien'];
+			$umur = $_POST['umur'];
+			$jenis_kelamin = $_POST['jenis_kelamin'];
+			$no_tlp = $_POST['no_tlp'];
+			$alamat = $_POST['alamat'];
+					
+			$data_masukan = array(
+					'username_p' => $username_p,
+					'password' => $password,
+					'nama_pasien' => $nama_pasien,
+					'umur' => $umur,
+					'jenis_kelamin' => $jenis_kelamin,
+					'no_tlp' => $no_tlp,
+					'alamat' => $alamat,
+				);
+
+			$mhs = $this->m_pasien->querymenambahpasien('pasien',$data_masukan);
+			if($mhs >= 1){
+				if($mhs){
+				$data['pesan']='TRUE';
+				}
+				else{
+					$data['pesan']='FALSE';
+				}
+				
+				$head['title']='';
+				$this->load->view('headerlogin', $head);
+				$this->load->view('v_daftarpasien', $data);
+				$this->load->view('footer');
+
+			}
+			else{
+				echo "<h1>Insert data gagal </h1>";
+			}
 		}
-		else{
-			echo "<h1>Insert data gagal </h1>";
+		else
+		{
+			redirect('c_validasi');
 		}
+		
 	}
 
 	public function menghapusPasien($username_p)
 	{
-		$where = array('username_p' => $username_p );
+		if ($this->session->userdata('level')==1) 
+		{
+			$where = array('username_p' => $username_p );
 
-		$mhs = $this->m_pasien->querymenghapuspasien('pasien', $where);
+			$mhs = $this->m_pasien->querymenghapuspasien('pasien', $where);
 
-		if($mhs >= 1){
-			
-		$head['title']='Daftar Pasien';
-		$mhs = $this->m_pasien->getTabel('pasien');
-		$this->load->view('headeradmin',$head);
-		$this->load->view('v_pasien' , array('data' => $mhs));
-		$this->load->view('footer');
+			if($mhs >= 1){
+				
+			$head['title']='Daftar Pasien';
+			$mhs = $this->m_pasien->getTabel('pasien');
+			$this->load->view('headeradmin',$head);
+			$this->load->view('v_pasien' , array('data' => $mhs));
+			$this->load->view('footer');
 
-		}else{
-			echo "<h1>hapus data gagal </h1>";
+			}else{
+				echo "<h1>hapus data gagal </h1>";
+			}
 		}
+		else
+		{
+			redirect('c_validasi');
+		}
+		
 	}
 }

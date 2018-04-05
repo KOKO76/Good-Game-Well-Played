@@ -30,12 +30,12 @@ class C_validasi extends CI_Controller {
 		elseif ($this->session->userdata('level')==1) 
 		{
 			// redirect ke halaman admin
-			print_r($this->session->userdata()); exit();
+			redirect('c_berandaadmin');
 		}
 		else
 		{
 			// redirect ke halaman pasien
-			print_r($this->session->userdata());  exit();
+			redirect('c_berandapasien');
 		}
 	}
 
