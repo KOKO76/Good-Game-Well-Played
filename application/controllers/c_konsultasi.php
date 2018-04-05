@@ -33,8 +33,13 @@ class c_konsultasi extends CI_Controller
 		/* Gejala yang dipilih pasien */
 		$selected 		  = $this->input->post('gejala');
 
-		if (count($selected) < 2) {
-			echo "kurang bro";
+		if (count($selected) < 3) {
+       $dataGejala    = $this->m_konsultasi->getDataGejala($selected);
+        $this->data['dataGejala']  = $dataGejala;
+
+			$this->load->view('headerpasien');
+      $this->load->view('v_hasildiagnosa2', $this->data);
+      $this->load->view('footer');
 		} 
 		else 
 		{

@@ -25,12 +25,41 @@
     <script src="<?php echo base_url() ?>assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/front.js"></script>
+    <script src="<?php echo base_url() ?>assets/dataTables/datatables.min.js"></script>
+
+    <!-- data tabel -->
+    <script type="text/javascript">
+        $(document).ready( function () {
+                $('#datatables').DataTable();
+                
+            } );
+    </script>
+
+    <!-- alert data berhasil disimpan -->
     <script>
         $(document).ready(function(){
             $("button").click(function(){
                 $(".alert-success").remove();
             });
         });
+    </script>
+
+    <!-- info penyakit -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
     </script>
   </body>
 </html>

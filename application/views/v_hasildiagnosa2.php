@@ -43,32 +43,6 @@
   </div>  
   <p style="text-align: center;"> 
     Berdasarkan pada Gejala yang dipilih, <br>
-    Pasien kemungkinan <strong><?= $nilai."%"; ?></strong> menderita gangguan mental 
-    <a style="font-weight: bold; text-decoration:underline;" data-toggle="modal" data-target="#myModal">
-      <?= $hasil_akhir[0]['nama_penyakit']; ?>.
-    </a>
+    Pasien kemungkinan <strong>tidak</strong> menderita gangguan mental 
   </p>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title"><?= $hasil_akhir[0]['nama_penyakit']; ?></h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="text-align: justify;">
-          <strong>DESKRIPSI :</strong> <br>
-          <?= $hasil_akhir[0]['deskripsi']; ?> <br><br>
-          <strong>PENANGANAN :</strong> <br>
-          <?= $hasil_akhir[0]['penanganan']; ?>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
 </div>

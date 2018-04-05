@@ -85,22 +85,22 @@ class M_validasi extends CI_Model{
     }
       
       //get name admin was login 
-    public function getnama_admin() 
+    /*public function getnama_pasien() 
     {
        $this->db->where('username', $this->session->userdata('username'));
-       $this->db->select('namai');
-       $hasill = $this->db->get('admin');
+       $this->db->select('nama_pasien');
+       $hasill = $this->db->get('pasien');
 
        return $hasill -> row_array();
     }
 
       //get id admin was login 
-    public function getid_admin() 
+    public function getid_pasien() 
     {
        $this->db->where('username', $this->session->userdata('username'));
-       $this->db->select('id_admin');
+       $this->db->select('username_p');
        $hasill = $this->db->get('admin');
 
        return $hasill-> row();
-    }
+    }*/
 }

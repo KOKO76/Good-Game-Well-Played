@@ -24,7 +24,7 @@
 
 <div class="card-body">
   <div class="table-responsive">
-      <table class="table table-striped table-bordered bootstrap-datatable datatable">
+      <table class="table table-bordered table-striped" id="datatables" > 
         <thead>
           <tr>
             <th><center>Kode</center></th>
