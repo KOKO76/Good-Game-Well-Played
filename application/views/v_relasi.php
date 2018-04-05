@@ -49,7 +49,7 @@
                         <a class="btn btn-info" href="<?php echo base_url()."index.php/c_relasi/mengubahRelasi/".$key['id_relasi']; ?>">
                           <i class="fa fa-edit"></i>                    
                         </a>
-                        <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_relasi/menghapusRelasi/".$key['id_relasi']; ?>">
+                        <a class="btn btn-danger" onclick="return confirm('Hapus data ini?')" href="<?php echo site_url()."/c_relasi/menghapusRelasi/".$key['id_relasi']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>
                       </center>

@@ -65,8 +65,8 @@
             
             <div id="navigation" class="navbar-collapse collapse">
               <ul class="nav navbar-nav ml-auto">
-                <li><a href="index.html"> <i class="caret"></i>Petunjuk Penggunaan</a></li>
-                <li><a href="index.html"> <i class="caret"></i>Pendaftaran Akun Pasien</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_berandautama"?>"><i class="caret"></i>Petunjuk Penggunaan</a></li>
+                <li><a href="<?php echo base_url(),"index.php/c_pasien/tambah"?>"> <i class="caret"></i>Pendaftaran Akun Pasien</a></li>
               </ul>
             </div>
             <div id="search" class="collapse clearfix">

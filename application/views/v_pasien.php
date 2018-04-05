@@ -43,7 +43,7 @@
                     <td><center><?php echo $key['no_tlp'];?></center></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_pasien/menghapusPasien/".$key['username_p']; ?>">
+                        <a class="btn btn-danger" onclick="return confirm('Hapus data ini?')" href="<?php echo site_url()."/c_pasien/menghapusPasien/".$key['username_p']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>
                       </center>

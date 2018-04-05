@@ -42,12 +42,9 @@
                     <td><center><?php echo $key['tanggal'];?></center></td>
                     <td class="center">
                       <center>
-                        <a class="btn btn-danger" href="<?php echo base_url()."index.php/c_riwayat/menghapusRiwayat/".$key['id_riwayat']; ?>">
+                        <a class="btn btn-danger" onclick="return confirm('Hapus data ini?')" href="<?php echo site_url()."/c_riwayat/menghapusRiwayat/".$key['id_riwayat']; ?>">
                           <i class="fa fa-trash-o"></i> 
-                        </a>
-
-                        <!-- <a href="<?php echo base_url('C_Paktaintegritas/cetak_pi/').$dk->no_dokumen.'/'.$dk->id_pelaksana; ?>"> -->
-              
+                        </a>             
                     <button type="button" class="btn btn-info">
                         <i class="fa fa-print"></i>
                     </button>
