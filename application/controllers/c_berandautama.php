@@ -20,6 +20,10 @@ class C_berandautama extends CI_Controller {
 	 */
 	public function index()
 	{
+		if (($this->session->userdata('level')==1) OR ($this->session->userdata('level')==='pasien'))
+		{
+			redirect('c_validasi');
+		}
 		$this->load->view('header');
 		$this->load->view('berandautama');
 		$this->load->view('footer');

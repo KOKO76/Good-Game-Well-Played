@@ -49,6 +49,7 @@ function validateForm() {
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
                         <input type="text" id="id_penyakit" name="id_penyakit" class="form-control">
+                        <div id="response" class="response"></div>
                       </div>
                     </div>
 
@@ -85,3 +86,39 @@ function validateForm() {
 
                 </section>
                 </section>
+
+<script>
+$(document).ready(function(){
+ $('#id_penyakit').blur(checkAvailability);
+});
+
+function checkAvailability(){
+ var id_penyakit = $('#id_penyakit').val(); 
+ if(id_penyakit == ""){  
+  $('#id_penyakit').css('border', '2px red solid');  
+ }else{
+  $.ajax({
+   type: "post",
+   url: "http://localhost/pakar/index.php/c_penyakit/cekPK",
+   cache: false,    
+   data:'id_penyakit=' + $("#id_penyakit").val(),
+   success: function(response){ 
+    try{
+     if(response=='true'){
+      $('#id_penyakit').css('border', '2px green solid'); 
+      $("#response").html("<span>Tersedia.</span>");
+     }else{
+      $('#id_penyakit').css('border', '2px red solid'); 
+      $("#response").html("<span>* Kode telah terpakai.</span>");
+     }          
+    }catch(e) {  
+     alert('Exception while request..');
+    }  
+   },
+   error: function(){      
+    alert('Error while request..');
+   }
+   });
+ }
+} 
+</script>

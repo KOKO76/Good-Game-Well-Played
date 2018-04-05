@@ -33,5 +33,12 @@ class M_penyakit extends CI_model {
 		$mhs = $this->db->query("SELECT * FROM penyakit".$id_penyakit);
 		return $mhs->result_array();
 	}
+
+ 	function getPK($id_penyakit)
+ 	{
+	  $this->db->where('id_penyakit',$id_penyakit); 
+	  $query = $this->db->get('penyakit');   
+	  return $query->result();  
+ 	}
 }
 ?>

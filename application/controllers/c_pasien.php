@@ -28,19 +28,11 @@ class C_pasien extends CI_Controller {
 
 	public function tambah()
 	{
-		if ($this->session->userdata('level')==1) 
-		{
-			$data['pesan']='';
-			$head['title']='Input Data Pasien';
-			$this->load->view('headerlogin', $head);
-			$this->load->view('v_daftarpasien', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			redirect('c_validasi');
-		}
-		
+		$data['pesan']='';
+		$head['title']='Input Data Pasien';
+		$this->load->view('headerlogin', $head);
+		$this->load->view('v_daftarpasien', $data);
+		$this->load->view('footer');
 	}
 
 	public function menambahPasien(){
