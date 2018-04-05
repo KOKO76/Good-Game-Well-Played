@@ -23,5 +23,12 @@ class M_pasien extends CI_model {
 		return $mhs;
 	}
 
+	public function getPasienWhere($username)
+	{
+		$query = $query = $this->db->get_where('pasien', array('username_p' => $username), 1);
+
+    return $query;
+	}
+
 }
 ?>

@@ -92,7 +92,7 @@ class C_pasien extends CI_Controller {
 
 	public function menghapusPasien($username_p)
 	{
-		if ($this->session->userdata('level')==1) 
+		if ($this->session->userdata('level')==1 OR $this->session->userdata('level')==='pasien') 
 		{
 			$where = array('username_p' => $username_p );
 
@@ -115,5 +115,21 @@ class C_pasien extends CI_Controller {
 			redirect('c_validasi');
 		}
 		
+	}
+
+	public function profilPasien()
+	{
+		if ($this->session->userdata('level')==='pasien') 
+		{
+			/* Data */
+			$this->data['pasien']	= $this->m_pasien->getPasienWhere($this->session->userdata('username'));
+
+			/* Load view */
+			$this->load->view('v_profilpasien',$this->data);
+		}
+		else
+		{
+			redirect('c_validasi');
+		}
 	}
 }
