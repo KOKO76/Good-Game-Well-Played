@@ -43,6 +43,19 @@ class C_penyakit extends CI_Controller {
 		
 	}
 
+	public function cekPK()
+	{
+	  $id_penyakit 	= $this->input->post('id_penyakit');    
+	  $query 				= $this->m_penyakit->getPK($id_penyakit);  
+    
+    $status ="true";  
+    if($query)
+    {
+	   $status = "false";
+	  }                
+  	echo $status;
+	}
+
 	public function menambahPenyakit(){
 		if ($this->session->userdata('level')==1) 
 		{

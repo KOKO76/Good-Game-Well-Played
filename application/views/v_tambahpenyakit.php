@@ -85,3 +85,37 @@ function validateForm() {
 
                 </section>
                 </section>
+
+<script>
+$(document).ready(function(){
+ $('#id_penyakit').blur(checkAvailability);
+});
+
+function checkAvailability(){
+ var id_penyakit = $('#id_penyakit').val(); 
+ if(id_penyakit == ""){  
+  $('#id_penyakit').css('border', '2px red solid');  
+ }else{
+  $.ajax({
+   type: "post",
+   url: "http://localhost/pakar/index.php/c_penyakit/cekPK",
+   cache: false,    
+   data:'id_penyakit=' + $("#id_penyakit").val(),
+   success: function(response){ 
+    try{
+     if(response=='true'){
+      $('#id_penyakit').css('border', '2px green solid'); 
+     }else{
+      $('#id_penyakit').css('border', '2px red solid'); 
+     }          
+    }catch(e) {  
+     alert('Exception while request..');
+    }  
+   },
+   error: function(){      
+    alert('Error while request..');
+   }
+   });
+ }
+} 
+</script>
