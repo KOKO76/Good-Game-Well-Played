@@ -49,6 +49,7 @@ function validateForm() {
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
                         <input type="text" id="id_penyakit" name="id_penyakit" class="form-control">
+                        <div id="response" class="response"></div>
                       </div>
                     </div>
 
@@ -105,8 +106,10 @@ function checkAvailability(){
     try{
      if(response=='true'){
       $('#id_penyakit').css('border', '2px green solid'); 
+      $("#response").html("<span>Tersedia.</span>");
      }else{
       $('#id_penyakit').css('border', '2px red solid'); 
+      $("#response").html("<span>* Kode telah terpakai.</span>");
      }          
     }catch(e) {  
      alert('Exception while request..');
