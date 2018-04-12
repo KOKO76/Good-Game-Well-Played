@@ -46,5 +46,12 @@ class M_relasi extends CI_model {
 		return $mhs->result_array();
 	}
 
+	function getPK($id_relasi)
+ 	{
+	  $this->db->where('id_relasi',$id_relasi); 
+	  $query = $this->db->get('relasi');   
+	  return $query->result();  
+ 	}
+
 }
 ?>

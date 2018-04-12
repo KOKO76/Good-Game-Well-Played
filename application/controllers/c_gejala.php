@@ -26,6 +26,18 @@ class C_gejala extends CI_Controller {
 		
 	}
 
+	public function cekPK()	{
+		  $id_gejala 	= $this->input->post('id_gejala');    
+		  $query 		= $this->m_gejala->getPK($id_gejala);  
+	    
+	    $status ="true";  
+	    if($query)
+	    {
+		   $status = "false";
+		  }                
+	  	echo $status;
+	}
+
 	public function tambah()
 	{
 		if ($this->session->userdata('level')==1) 

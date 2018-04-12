@@ -25,6 +25,18 @@ class C_relasi extends CI_Controller {
 		}
 		
 	}
+
+	public function cekPK()	{
+		  $id_relasi 	= $this->input->post('id_relasi');    
+		  $query 		= $this->m_relasi->getPK($id_relasi);  
+	    
+	    $status ="true";  
+	    if($query)
+	    {
+		   $status = "false";
+		  }                
+	  	echo $status;
+	}
 	
 	public function tambah()
 	{

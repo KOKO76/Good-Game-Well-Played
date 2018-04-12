@@ -25,13 +25,15 @@
                   Data Berhasil Tersimpan!
                   </div>';
               }
-            ?>  
+            ?> 
+
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_relasi/menambahRelasi')?>" method="POST">    
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
                         <input type="text" id="id_relasi" name="id_relasi" class="form-control">
+                        <div id="response" class="response"></div>
                       </div>
                     </div>
 
@@ -73,4 +75,40 @@
                   </form>
                 </div>
                 </div>
-                </section>>
+                </section>
+
+<script>
+    $(document).ready(function(){
+     $('#id_relasi').blur(checkAvailability);
+    });
+
+    function checkAvailability(){
+     var id_relasi = $('#id_relasi').val(); 
+     if(id_relasi == ""){  
+      $('#id_relasi').css('border', '2px red solid');  
+     }else{
+      $.ajax({
+       type: "post",
+       url: "http://localhost/pakar/index.php/c_relasi/cekPK",
+       cache: false,    
+       data:'id_relasi=' + $("#id_relasi").val(),
+       success: function(response){ 
+        try{
+         if(response=='true'){
+          $('#id_relasi').css('border', '2px green solid'); 
+          $("#response").html("<span>Tersedia.</span>");
+         }else{
+          $('#id_relasi').css('border', '2px red solid'); 
+          $("#response").html("<span>* Kode telah terpakai.</span>");
+         }          
+        }catch(e) {  
+         alert('Exception while request..');
+        }  
+       },
+       error: function(){      
+        alert('Error while request..');
+       }
+       });
+     }
+    } 
+</script>

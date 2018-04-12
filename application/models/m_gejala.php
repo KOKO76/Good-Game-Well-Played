@@ -34,5 +34,12 @@ class M_gejala extends CI_model {
 		$mhs = $this->db->query("SELECT * FROM gejala".$id_gejala);
 		return $mhs->result_array();
 	}
+
+	function getPK($id_gejala)
+ 	{
+	  $this->db->where('id_gejala',$id_gejala); 
+	  $query = $this->db->get('gejala');   
+	  return $query->result();  
+ 	}
 }
 ?>
