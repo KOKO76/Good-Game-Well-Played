@@ -61,11 +61,10 @@ for (i = 0; i < coll.length; i++) {
     <?php  
                 foreach ($data as $key) 
                 { ?>
-                   <button class="collapsible" name="id_penyakit" value="<?php echo $key['id_penyakit']?>"><h3><?php echo $key['nama_penyakit'];?></button></h3>
-                   <br></br>
-                   <div class="content">
-                     <p value="<?php echo $key['id_penyakit'] ?>" 
-                      <?php if ($key['id_penyakit']==$id_penyakit) echo 'selected';  ?>
+                   <button class="collapsible" name="id_penyakit" value="<?php echo $key['id_penyakit']?>"><h3><?php echo $key['nama_penyakit'];?></h3></button>
+
+                   <div class="content" style="display: none;">
+                     <p value="<?php echo $key['id_penyakit'] ?>">
                                 <h4><b>Deskripsi</b></h4>
                                  &emsp; &emsp; <?php echo $key['deskripsi']; ?> 
                                  </br>
@@ -73,11 +72,9 @@ for (i = 0; i < coll.length; i++) {
                                  <h4><b>Penanganan</b></h4>
                                  &emsp; &emsp; <?php echo $key['penanganan']; ?> 
                                  </p>
-                                 <?php } ?>
+                                 
                    </div>
-                  
-                   <?php  
-                 ?>
+              <?php } ?>
                
 </div>
 
