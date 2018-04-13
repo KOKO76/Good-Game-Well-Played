@@ -6,8 +6,8 @@
           </div>
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
-              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
-              <li class="breadcrumb-item active">Data Riwayat</li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandapasien"?>">Beranda</a></li>
+              <li class="breadcrumb-item active">Riwayat</li>
            </ul>
           </div>
       </div>
@@ -30,21 +30,17 @@
         </thead>
     
           <tbody>
-            <?php  
-                foreach ($data as $key) 
-                { ?>
+            <?php foreach ($pasien->result() as $row) 
+               {?>
                   <tr>
-                    <td><center><?php echo $key['id_riwayat'];?></center></td>
-                    <td><justify-content-end><?php echo $key['nama_pasien'];?></justify-content-end></td>
-                    <td><center><?php echo $key['umur'];?></center></td>
-                    <td><justify-content-end><?php echo $key['id_gejala'];?></justify-content-end></td>
-                    <td><justify-content-end><?php echo $key['nama_penyakit'];?></justify-content-end></td>
-                    <td><center><?php echo $key['tanggal'];?></center></td>
+                    <td><center><?php echo $row->id_riwayat;?></center></td>
+                    <td><justify-content-end><?php echo $row->nama_pasien;?></justify-content-end></td>
+                    <td><center><?php echo $row->umur;?></center></td>
+                    <td><justify-content-end><?php echo $row->id_gejala;?></justify-content-end></td>
+                    <td><justify-content-end><?php echo $row->nama_penyakit;?></justify-content-end></td>
+                    <td><center><?php echo $row->tanggal;?></center></td>
                     <td class="center">
-                      <center>
-                        <a class="btn btn-danger" onclick="return confirm('Hapus data ini?')" href="<?php echo site_url()."/c_riwayat/menghapusRiwayat/".$key['id_riwayat']; ?>">
-                          <i class="fa fa-trash-o"></i> 
-                        </a>             
+                      <center>          
                     <button type="button" class="btn btn-info">
                         <i class="fa fa-print"></i>
                     </button>

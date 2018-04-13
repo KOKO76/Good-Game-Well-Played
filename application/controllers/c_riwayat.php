@@ -55,4 +55,22 @@ class C_riwayat extends CI_Controller {
 		}
 		
 	}
+
+	public function riwayatPasien()
+	{
+		if ($this->session->userdata('level')==='pasien') 
+		{
+			/* Data */
+			$this->data['pasien']	= $this->m_riwayat->getRiwayatWhere($this->session->userdata('username'));
+
+			/* Load view */
+			$this->load->view('headerpasien');
+			$this->load->view('v_riwayatpasien',$this->data);
+			$this->load->view('footer');
+		}
+		else
+		{
+			redirect('c_validasi');
+		}
+	}
 }

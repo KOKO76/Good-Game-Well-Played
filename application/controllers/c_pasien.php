@@ -167,7 +167,7 @@ class C_pasien extends CI_Controller {
 
 			$where = array('username_p' => $username_p );
 			$mhs = $this->m_pasien->querymengubahpasien('pasien',$data_masukan, $where);
-			if($mhs >= 1){
+			if($mhs >= 'pasien'){
 				if($mhs){
 				$data['pesan']='TRUE';
 				}
