@@ -127,23 +127,16 @@ class C_pasien extends CI_Controller {
 		}
 	}
 
-	public function mengubahPasien($username_p){
+	public function mengubahPasien(){
 		if ($this->session->userdata('level')=='pasien') 
 		{
 			$data['pesan']='';
-			$data = $this->m_pasien->Getdat(" where username_p = '$username_p'");
-			$dat = array(
-				'username_p' => $data[0]['username_p'],
-				'nama_pasien' => $data[0]['nama_pasien'],
-				'umur' => $data[0]['umur'],
-				'jenis_kelamin' => $data[0]['jenis_kelamin'],
-				'no_tlp' => $data[0]['no_tlp'],
-				'alamat' => $data[0]['alamat'],
-				);
+			/* Data */
+			$this->data['pasien']	= $this->m_pasien->getPasienWhere($this->session->userdata('username'));
 
-			$data['title']='Ubah Data Pasien';
+			/* Load view */
 			$this->load->view('headerpasien');
-			$this->load->view('v_ubahpasien', $dat);
+			$this->load->view('v_ubahpasien',$this->data);
 			$this->load->view('footer');
 		}
 		else
@@ -164,7 +157,6 @@ class C_pasien extends CI_Controller {
 			$alamat = $_POST['alamat'];
 					
 			$data_masukan = array(
-					'username_p' => $username_p,
 					'password' => $password,
 					'nama_pasien' => $nama_pasien,
 					'umur' => $umur,
@@ -183,10 +175,7 @@ class C_pasien extends CI_Controller {
 					$data['pesan']='FALSE';
 				}
 				
-				$head['title']='';
-				$this->load->view('headerpasien', $head);
-				$this->load->view('v_ubahpasien', $data);
-				$this->load->view('footer');
+				redirect('c_pasien/profilPasien');
 
 			}
 			else{
