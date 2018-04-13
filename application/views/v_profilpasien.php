@@ -22,11 +22,16 @@
   <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Username</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="username_p" disabled name="username_p" class="form-control" value="<?= $row->username_p ?>">
+                        <input type="text" id="username_p" name="username_p" class="form-control" value="<?= $row->username_p ?>">
                       </div>
                     </div>
 
-                    
+                    <!-- <div class="form-group row has-success">
+                      <label class="col-sm-2 form-control-label"><b>Password</b></label>                
+                     <div class="col-sm-10">
+                       <input type="text" id="password" name="password" class="form-control" value="<?= $row->password ?>">
+                     </div>
+                    </div> -->
 
                      <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Nama</b></label>
