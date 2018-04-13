@@ -21,7 +21,7 @@ class c_konsultasi extends CI_Controller
 	public function index()
 	{
 		$this->data['gejala']= $this->m_konsultasi->getGejala();
-		$this->load->view('headeradmin');
+		$this->load->view('headerpasien');
 		$this->load->view('v_konsultasi',$this->data);
 		$this->load->view('footer');
 	}

@@ -30,5 +30,15 @@ class M_pasien extends CI_model {
     return $query;
 	}
 
+	public function querymengubahpasien($tableName, $data, $where){
+		$mhs = $this->db->update($tableName, $data, $where);
+		return $mhs;
+	}
+
+	public function getdat($username_p=""){
+		$mhs = $this->db->query("SELECT * FROM pasien".$username_p);
+		return $mhs->result_array();
+	}
+
 }
 ?>
