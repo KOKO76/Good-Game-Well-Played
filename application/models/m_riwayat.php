@@ -33,12 +33,6 @@ class M_riwayat extends CI_model {
 		$this->db->insert('riwayat', $data);
 	}
 
-	public function editRiwayat()
-	{
-
-	}
-
-
 	public function querymenghapusriwayat($tableName,$where){
 		$mhs= $this->db->delete($tableName,$where);
 		return $mhs;
@@ -46,8 +40,11 @@ class M_riwayat extends CI_model {
 
 	public function getRiwayatWhere($username)
 	{
-		$query = $query = $this->db->get_where('riwayat', array('username_p' => $username), 1);
-
+		$query = $this->db->query("
+			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal
+			FROM riwayat 
+			JOIN pasien on pasien.username_p = riwayat.username_p
+			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit WHERE riwayat.username_p = '".$username."'");
     return $query;
 	}
 }
