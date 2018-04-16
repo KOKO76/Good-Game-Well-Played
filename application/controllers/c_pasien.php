@@ -26,6 +26,18 @@ class C_pasien extends CI_Controller {
 		
 	}
 
+	public function cekPK()	{
+		  $username_p 	= $this->input->post('username_p');    
+		  $query 		= $this->m_pasien->getPK($username_p);  
+	    
+	    $status ="true";  
+	    if($query)
+	    {
+		   $status = "false";
+		  }                
+	  	echo $status;
+	}
+
 	public function tambah()
 	{
 		$data['pesan']='';

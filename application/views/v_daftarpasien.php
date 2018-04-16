@@ -33,6 +33,7 @@
                       <label class="col-sm-2 form-control-label"><b>Username</b></label>
                       <div class="col-sm-10">
                         <input type="text" id="username_p" name="username_p" class="form-control">
+                         <!-- <div id="response" class="response"></div> -->
                       </div>
                     </div>
 
@@ -110,3 +111,40 @@
                 </div>
                 </div>
                 </section>
+
+
+<script>
+$(document).ready(function(){
+ $('#username_p').blur(checkAvailability);
+});
+
+function checkAvailability(){
+ var username_p = $('#username_p').val(); 
+ if(username_p == ""){  
+  $('#username_p').css('border', '2px red solid');  
+ }else{
+  $.ajax({
+   type: "post",
+   url: "http://localhost/pakar/index.php/c_pasien/cekPK",
+   cache: false,    
+   data:'username_p=' + $("#username_p").val(),
+   success: function(response){ 
+    try{
+     if(response=='true'){
+      $('#username_p').css('border', '2px green solid'); 
+      $("#response").html("<span>Tersedia.</span>");
+     }else{
+      $('#username_p').css('border', '2px red solid'); 
+      $("#response").html("<span>* Username telah digunakan.</span>");
+     }          
+    }catch(e) {  
+     alert('Exception while request..');
+    }  
+   },
+   error: function(){      
+    alert('Error while request..');
+   }
+   });
+ }
+} 
+</script>

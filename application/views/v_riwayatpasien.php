@@ -30,7 +30,8 @@
         </thead>
     
           <tbody>
-            <?php foreach ($pasien->result() as $row) 
+            <?php 
+            foreach ($pasien->result() as $row) 
                {?>
                   <tr>
                     <td><center><?php echo $row->id_riwayat;?></center></td>
