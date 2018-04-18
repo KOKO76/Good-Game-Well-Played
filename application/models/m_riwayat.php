@@ -18,6 +18,19 @@ class M_riwayat extends CI_model {
 		return $mhs->result_array();	
 	}
 
+	public function tes($id_riwayat=""){
+
+		$mhs = $this->db->query("
+			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal, penyakit.deskripsi, penyakit.penanganan
+			FROM pasien 
+			JOIN riwayat on pasien.username_p = riwayat.username_p
+			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit
+			and id_riwayat='".$id_riwayat."'");
+
+
+		return $mhs->result_array();	
+	}
+
 	public function getLastDataRiwayat()
 	{
 		$this->db->select('id_riwayat,tanggal');

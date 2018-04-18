@@ -8,6 +8,8 @@ class C_riwayat extends CI_Controller {
 		parent::__construct();
 
 		$this->load->library('m_riwayat');
+		$this->load->helper(array('form','url'));
+		$this->load->library('session');
 	}
 
 	public function daftar(){
@@ -73,4 +75,27 @@ class C_riwayat extends CI_Controller {
 			redirect('c_validasi');
 		}
 	}
+
+
+	public function tes($id_riwayat){
+
+		$data = $this->m_riwayat->tes("$id_riwayat");
+		$dat = array(
+			'id_riwayat' => $data[0]['id_riwayat'],
+			'nama_pasien' => $data[0]['nama_pasien'],
+			'umur' => $data[0]['umur'],
+			'id_gejala' => $data[0]['id_gejala'],
+			'nama_penyakit' => $data[0]['nama_penyakit'],
+			'tanggal' => $data[0]['tanggal'],
+			'deskripsi' => $data[0]['deskripsi'],
+			'penanganan' => $data[0]['penanganan'],
+			);		
+				
+		$this->load->view('v_print', $dat);
+		
+	}
+
+
+
+
 }

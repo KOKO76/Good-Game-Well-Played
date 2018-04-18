@@ -14,18 +14,7 @@
    </div>
 </div>
 
-<br>
-<section   class="forms">
-          <div class="container-fluid">
 
-            <?php
-              if ( $pesan == 'TRUE' ) {
-                echo'<div class="alert alert-success">
-                  <button type="button" class="close" data-dismiss="alert">&times;</button>
-                  Data Berhasil Tersimpan!
-                  </div>';
-              }
-            ?> 
              
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_pasien/menambahPasien')?>" method="POST">    
@@ -33,7 +22,7 @@
                       <label class="col-sm-2 form-control-label"><b>Username</b></label>
                       <div class="col-sm-10">
                         <input type="text" id="username_p" name="username_p" class="form-control">
-                         <!-- <div id="response" class="response"></div> -->
+                         <div id="response" class="response"></div>
                       </div>
                     </div>
 

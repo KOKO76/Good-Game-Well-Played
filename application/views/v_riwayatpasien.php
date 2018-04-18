@@ -42,9 +42,9 @@
                     <td><center><?php echo $row->tanggal;?></center></td>
                     <td class="center">
                       <center>          
-                    <button type="button" class="btn btn-info">
-                        <i class="fa fa-print"></i>
-                    </button>
+                        <a target="blank" class="btn btn-success" href="<?php echo base_url()."index.php/c_riwayat/tes/".$row->id_riwayat; ?>">
+                          <i class="fa fa-print"></i>
+                        </a>
                       </center>
                     </td>
                   </tr>

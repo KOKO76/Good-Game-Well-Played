@@ -45,8 +45,10 @@
                         <a class="btn btn-danger" onclick="return confirm('Hapus data ini?')" href="<?php echo site_url()."/c_riwayat/menghapusRiwayat/".$key['id_riwayat']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>             
-                    <button type="button" class="btn btn-info">
-                        <i class="fa fa-print"></i>
+
+                        <a target="blank" class="btn btn-success" href="<?php echo base_url()."index.php/c_riwayat/tes/".$key['id_riwayat']; ?>">
+                          <i class="fa fa-print"></i>
+                        </a>
                     </button>
                       </center>
                     </td>

@@ -78,7 +78,7 @@ class C_pasien extends CI_Controller {
 			
 			$head['title']='';
 			$this->load->view('headerlogin', $head);
-			$this->load->view('v_daftarpasien', $data);
+			$this->load->view('v_login', $data);
 			$this->load->view('footer');
 
 		}
