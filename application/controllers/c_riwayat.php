@@ -89,6 +89,7 @@ class C_riwayat extends CI_Controller {
 			'tanggal' => $data[0]['tanggal'],
 			'deskripsi' => $data[0]['deskripsi'],
 			'penanganan' => $data[0]['penanganan'],
+			'presentase' => $data[0]['presentase'],
 			);		
 				
 		$this->load->view('v_print', $dat);

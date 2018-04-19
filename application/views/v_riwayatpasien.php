@@ -24,6 +24,7 @@
             <th><center>Umur</center></th>
             <th><center>Gejala</center></th>
             <th><center>Penyakit</center></th>
+             <th><center>Presentase</center></th>
             <th><center>Tanggal</center></th>
             <th><center>Aksi</center></th>
           </tr>
@@ -39,6 +40,7 @@
                     <td><center><?php echo $row->umur;?></center></td>
                     <td><justify-content-end><?php echo $row->id_gejala;?></justify-content-end></td>
                     <td><justify-content-end><?php echo $row->nama_penyakit;?></justify-content-end></td>
+                     <td><center><?php echo $row->presentase;?></center></td>
                     <td><center><?php echo $row->tanggal;?></center></td>
                     <td class="center">
                       <center>          

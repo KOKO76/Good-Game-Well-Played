@@ -26,12 +26,13 @@
                   </div>';
               }
             ?>  
+
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_gejala/menambahGejala')?>" method="POST">    
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="id_gejala" name="id_gejala" class="form-control">
+                        <input type="text" id="id_gejala" name="id_gejala" class="form-control" required="required" oninvalid="this.setCustomValidity('Id Gejala Tidak Boleh Kosong')" oninput="setCustomValidity('')" placeholder="Awali Kode Gejala dengan Huruf 'G', Contoh: G01">
                         <div id="response" class="response"></div>
                       </div>
                     </div>
@@ -39,7 +40,7 @@
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Nama Gejala</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="nama_gejala" name="nama_gejala" class="form-control">
+                        <input type="text" id="nama_gejala" name="nama_gejala" class="form-control" required="required" oninvalid="this.setCustomValidity('Nama Gejala Tidak Boleh Kosong')" oninput="setCustomValidity('')">
                       </div>
                     </div>
 

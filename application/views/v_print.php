@@ -21,7 +21,6 @@
 	<link id="base-style-responsive" href="<?php echo base_url() ?>assets/css/style-responsive.css" rel="stylesheet">
 	<link href='<?php echo base_url() ?>assets/http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
 	
-	<link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/iain.png">
 	
 	
 		
@@ -45,17 +44,10 @@
 				<HR WIDTH="900px" SIZE="8" NOSHADE>
 
 					<br>
-					<div class="box">
-						<div class="box-content">
+						<p style="text-align:right">
+							<h4 style='text-align:right;'>Tanggal Konsultasi: <?php echo $tanggal;?></h4>
+						</p>
 
-							<div style="background:#fff" class="span12">
-									<p style="text-align:right">
-										<h4 style='text-align:right;'>Tanggal Konsultasi: <?php echo $tanggal;?></h4>
-									</p>
-							</div>
-
-						</div>
-					</div>
 
 
 						<div class="box-title" style='text-align:left;'>
@@ -70,13 +62,14 @@
 										<td style='text-align:left;'>Nama Pasien</td><td style='text-align:left;'>:</td><td style='text-align:left;'><?php echo $nama_pasien; ?></td>
 									</tr>
 									<tr>
-										<td style='text-align:left;'>Umur</td><td style='text-align:left;'>:</td><td style='text-align:left;'><?php echo $umur;?></td>
+										<td style='text-align:left;'>Umur</td><td style='text-align:left;'>:</td><td style='text-align:left;'><?php echo $umur;?> Tahun</td>
 									</tr>
 								</table>	
 						</div>
 
+						<HR WIDTH="900px" SIZE="3" NOSHADE>
 						<div class="box-title">
-								<h3>Hasil Konsultasi</h3>
+								<h3>HASIL KONSULTASI</h3>
 						</div>
 						<div class="box-content">
 								<table class="table">
@@ -85,6 +78,9 @@
 									</tr>
 									<tr>
 										<td>Penyakit</td><td>:</td><td><?php echo $nama_penyakit; ?></td>
+									</tr>
+									<tr>
+										<td>Presentase</td><td>:</td><td><?php echo $presentase; ?></td>
 									</tr>
 									<tr>
 										<td>Deskripsi</td><td>:</td><td><?php echo $deskripsi; ?></td>

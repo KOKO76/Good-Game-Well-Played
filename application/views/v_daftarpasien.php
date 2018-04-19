@@ -15,13 +15,13 @@
 </div>
 
 
-             
+<br>             
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_pasien/menambahPasien')?>" method="POST">    
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Username</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="username_p" name="username_p" class="form-control">
+                        <input type="text" id="username_p" name="username_p" class="form-control" required="required" oninvalid="this.setCustomValidity('Username Tidak Boleh Kosong')" oninput="setCustomValidity('')">
                          <div id="response" class="response"></div>
                       </div>
                     </div>
@@ -30,7 +30,7 @@
                       <label class="col-sm-2 form-control-label"><b>Password</b></label>
                       <div class="col-sm-10">
 
-                        <input type="text" id="password" name="password" class="form-control">
+                        <input type="text" id="password" name="password" class="form-control" required="required" oninvalid="this.setCustomValidity('Password Tidak Boleh Kosong')" oninput="setCustomValidity('')">
 
                       </div>
                     </div>
@@ -38,7 +38,7 @@
                      <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Nama</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="nama_pasien" name="nama_pasien" class="form-control">
+                        <input type="text" id="nama_pasien" name="nama_pasien" class="form-control" required="required" oninvalid="this.setCustomValidity('Nama Pasien Tidak Boleh Kosong')" oninput="setCustomValidity('')">
                       </div>
                     </div>
 
@@ -79,14 +79,14 @@
                       <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>No. Telepon</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="no_tlp" name="no_tlp" class="form-control">
+                        <input type="text" id="no_tlp" name="no_tlp" class="form-control" required="required" oninvalid="this.setCustomValidity('No Telepon Tidak Boleh Kosong')" oninput="setCustomValidity('')">
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Alamat</b></label>
                       <div class="col-sm-10">
-                        <textarea type="text" id="alamat" name="alamat" class="form-control"></textarea>
+                        <textarea type="text" id="alamat" name="alamat" class="form-control" required="required" oninvalid="this.setCustomValidity('Alamat Tidak Boleh Kosong')" oninput="setCustomValidity('')"></textarea>
                       </div>
                     </div>
 

@@ -10,7 +10,7 @@ class M_riwayat extends CI_model {
 	public function getTabel(){
 
 		$mhs = $this->db->query("
-			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal
+			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal, riwayat.presentase
 			FROM pasien 
 			JOIN riwayat on pasien.username_p = riwayat.username_p
 			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit");
@@ -21,7 +21,7 @@ class M_riwayat extends CI_model {
 	public function tes($id_riwayat=""){
 
 		$mhs = $this->db->query("
-			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal, penyakit.deskripsi, penyakit.penanganan
+			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal, penyakit.deskripsi, penyakit.penanganan, riwayat.presentase
 			FROM pasien 
 			JOIN riwayat on pasien.username_p = riwayat.username_p
 			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit
@@ -54,7 +54,7 @@ class M_riwayat extends CI_model {
 	public function getRiwayatWhere($username)
 	{
 		$query = $this->db->query("
-			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal
+			SELECT riwayat.id_riwayat, pasien.nama_pasien, pasien.umur, riwayat.id_gejala, penyakit.nama_penyakit, riwayat.tanggal, riwayat.presentase
 			FROM riwayat 
 			JOIN pasien on pasien.username_p = riwayat.username_p
 			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit WHERE riwayat.username_p = '".$username."'");
