@@ -44,7 +44,6 @@ class M_riwayat extends CI_model {
 
 	}
 
-
 	public function querymenghapusriwayat($tableName,$where){
 		$mhs= $this->db->delete($tableName,$where);
 		return $mhs;
@@ -52,7 +51,8 @@ class M_riwayat extends CI_model {
 
 	public function getRiwayatWhere($username)
 	{
-		$query = $query = $this->db->get_where('riwayat', array('username_p' => $username), 1);
+		$this->db->order_by('tanggal', 'DESC');
+		$query = $this->db->get_where('riwayat', array('username_p' => $username));
 
     return $query;
 	}
