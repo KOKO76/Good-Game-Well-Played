@@ -33,10 +33,16 @@ class M_riwayat extends CI_model {
 
 	public function getLastDataRiwayat()
 	{
-		$this->db->select('id_riwayat,tanggal');
-		$this->db->order_by('id_riwayat', 'DESC');
-		$this->db->limit(1);
-		$query = $this->db->get('riwayat');
+		// $this->db->select('id_riwayat,tanggal');
+		// $this->db->order_by('id_riwayat', 'DESC');
+		// $this->db->limit(1);
+		// $query = $this->db->get('riwayat');
+
+		$query = $this->db->query("
+			SELECT id_riwayat, tanggal 
+			FROM riwayat 
+			ORDER BY CAST(id_riwayat AS UNSIGNED) DESC
+			");
 
 		return $query->result_array();
 	}
