@@ -33,6 +33,8 @@ class c_konsultasi extends CI_Controller
 		/* Gejala yang dipilih pasien */
 		$selected 		  = $this->input->post('gejala');
 
+    // print_r($selected);exit();
+
 		if (count($selected) < 3) {
        $dataGejala    = $this->m_konsultasi->getDataGejala($selected);
         $this->data['dataGejala']  = $dataGejala;
@@ -128,15 +130,29 @@ class c_konsultasi extends CI_Controller
       $id_riwayat = date("m") ."". substr(date("Y"), 2) ."".$noUrut;
       // end
 
-      $id_penyakit  = $hasil_akhir[0]['id_penyakit'];
-      $id_gejala    = implode(",", $selected);
+      $id_penyakit    = $hasil_akhir[0]['id_penyakit'];
+      // $id_gejala      = implode(",", $selected);
+      
+      // START Mengambil nama gejala
+      $getNamaGejala  = array();
+      $no = 0;
+
+      foreach ($this->m_konsultasi->getNamaGejala($selected) as $key) 
+      {
+        $getNamaGejala[$no] = $key->nama_gejala;
+        $no++;
+      }
+
+      $nama_gejala  = implode(".</br>", $getNamaGejala);
+      // END
+
       $username_p   = $_SESSION['username'];
       $presentase   = round($densitas_baru[$codes[0]]*100,2);
           
       $data_masukan = array(
           'id_riwayat'  => $id_riwayat,
           'id_penyakit' => $id_penyakit,
-          'id_gejala'   => $id_gejala,
+          'nama_gejala' => $nama_gejala,
           'username_p'  => $username_p,
           'presentase'  => $presentase,
         );

@@ -38,7 +38,7 @@
                     <td><center><?php echo $row->id_riwayat;?></center></td>
                     <td><justify-content-end><?php echo $row->nama_pasien;?></justify-content-end></td>
                     <td><center><?php echo $row->umur;?></center></td>
-                    <td><justify-content-end><?php echo $row->id_gejala;?></justify-content-end></td>
+                    <td><justify-content-end><?php echo $row->nama_gejala;?></justify-content-end></td>
                     <td><justify-content-end><?php echo $row->nama_penyakit;?></justify-content-end></td>
                      <td><center><?php echo $row->presentase;?></center></td>
                     <td><center><?php echo $row->tanggal;?></center></td>
