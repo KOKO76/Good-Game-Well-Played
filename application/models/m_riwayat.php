@@ -64,6 +64,7 @@ class M_riwayat extends CI_model {
 			FROM riwayat 
 			JOIN pasien on pasien.username_p = riwayat.username_p
 			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit WHERE riwayat.username_p = '".$username."'");
+
     return $query;
 	}
 }

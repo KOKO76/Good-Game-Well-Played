@@ -31,6 +31,18 @@ class m_konsultasi extends CI_Model {
 
 		return $query->result_array();
 	}
+
+	// mengambil nama gejala
+	public function getNamaGejala($selected)
+	{
+		$query = $this->db->query("
+			SELECT nama_gejala
+      FROM gejala
+      WHERE id_gejala IN ('".implode("','", $selected)."')
+      ");
+
+		return $query->result();
+	}
 	
 	public function getEnvironment()
 	{
