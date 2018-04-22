@@ -74,7 +74,7 @@
 						<div class="box-content">
 								<table class="table">
 									<tr>
-										<td>Id Gejala</td><td>:</td><td><?php echo $id_gejala;?></td>
+										<td>Nama Gejala</td><td>:</td><td><?php echo $nama_gejala;?></td>
 									</tr>
 									<tr>
 										<td>Penyakit</td><td>:</td><td><?php echo $nama_penyakit; ?></td>

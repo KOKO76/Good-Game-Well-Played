@@ -84,7 +84,7 @@ class C_riwayat extends CI_Controller {
 			'id_riwayat' => $data[0]['id_riwayat'],
 			'nama_pasien' => $data[0]['nama_pasien'],
 			'umur' => $data[0]['umur'],
-			'id_gejala' => $data[0]['id_gejala'],
+			'nama_gejala' => $data[0]['nama_gejala'],
 			'nama_penyakit' => $data[0]['nama_penyakit'],
 			'tanggal' => $data[0]['tanggal'],
 			'deskripsi' => $data[0]['deskripsi'],
