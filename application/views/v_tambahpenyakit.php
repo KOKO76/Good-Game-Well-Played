@@ -27,28 +27,13 @@
               }
             ?>  
 
-<script type="text/javascript">
-function validateForm() {
-      var x = document.forms["penyakit"]["id_penyakit"].value;
-      if (x == "") {
-          alert("Kode penyakit tidak boleh kosong");
-          return false;
-      }
-      var y = document.forms["penyakit"]["nama_penyakit"].value;
-      if (y == "") {
-          alert("Nama penyakit tidak boleh kosong");
-          return false;
-      }
-  }
-</script>
-
 <div class="col-md-8 mx-auto">
 <form class="form-horizontal" role="form" action="<?php echo base_url('index.php/c_penyakit/menambahPenyakit')?>" method="POST" name="penyakit" onsubmit="return validateForm()">    
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="id_penyakit" name="id_penyakit" class="form-control">
+                        <input type="text" id="id_penyakit" name="id_penyakit" class="form-control" required="required" oninvalid="this.setCustomValidity('Id Penyakit Tidak Boleh Kosong')" oninput="setCustomValidity('')"  placeholder="Awali Kode Penyakit dengan Huruf 'P', Contoh: P01">
                         <div id="response" class="response"></div>
                       </div>
                     </div>
@@ -56,21 +41,21 @@ function validateForm() {
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Nama Penyakit</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="nama_penyakit" name="nama_penyakit" class="form-control">
+                        <input type="text" id="nama_penyakit" name="nama_penyakit" class="form-control" required="required" oninvalid="this.setCustomValidity('Nama Penyakit Tidak Boleh Kosong')" oninput="setCustomValidity('')">
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Deskripsi</b></label>
                       <div class="col-sm-10">
-                        <textarea id="deskripsi" name="deskripsi" class="form-control"></textarea>
+                        <textarea id="deskripsi" name="deskripsi" class="form-control" required="required" oninvalid="this.setCustomValidity('Deskripsi Penyakit Tidak Boleh Kosong')" oninput="setCustomValidity('')"></textarea>
                       </div>
                     </div>
 
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Penanganan</b></label>
                       <div class="col-sm-10">
-                        <textarea id="penanganan" name="penanganan" class="form-control"></textarea>
+                        <textarea id="penanganan" name="penanganan" class="form-control" required="required" oninvalid="this.setCustomValidity('Penanganan Penyakit Tidak Boleh Kosong')" oninput="setCustomValidity('')"></textarea>
                       </div>
                     </div>
 

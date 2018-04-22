@@ -29,7 +29,7 @@
                       <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label" disabled><b>Password</b></label>
                       <div class="col-sm-10">
-                        <input type="password" id="password"   name="password" class="form-control">
+                        <input type="password" id="password"   name="password" class="form-control" placeholder="Isi dengan Password Baru atau Lama" required="required" oninvalid="this.setCustomValidity('Password Harus Terisi')" oninput="setCustomValidity('')" >
                       </div>
                     </div>
 
