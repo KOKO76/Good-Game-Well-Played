@@ -8,10 +8,7 @@
         </div>
       </div>
 
-
 <section class="forms">
-
-
  <div id="content">
         <div class="container">
           <div class="row">
@@ -21,11 +18,11 @@
                 <form action="<?php echo site_url('c_validasi/getLogin')?>" method="POST">
                   <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" name="username" placeholder="Username" class="form-control" required>
+                    <input type="text" name="username" placeholder="Username" class="form-control" required="required" oninvalid="this.setCustomValidity('Username Belum Diisi')" oninput="setCustomValidity('')">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                     <input type="password" name="password" placeholder="Password" class="form-control" required>
+                     <input type="password" name="password" placeholder="Password" class="form-control" required="required" oninvalid="this.setCustomValidity('Password Belum Diisi')" oninput="setCustomValidity('')">
                   </div>
                   <div class="text-center">
                     <input type="submit" value="Login" class="btn btn-primary">

@@ -24,6 +24,7 @@
             <th><center>Umur</center></th>
             <th><center>Gejala</center></th>
             <th><center>Penyakit</center></th>
+            <th><center>Presentase</center></th>
             <th><center>Tanggal</center></th>
             <th><center>Aksi</center></th>
           </tr>
@@ -39,14 +40,17 @@
                     <td><center><?php echo $key['umur'];?></center></td>
                     <td><justify-content-end><?php echo $key['nama_gejala'];?></justify-content-end></td>
                     <td><justify-content-end><?php echo $key['nama_penyakit'];?></justify-content-end></td>
+                    <td><center><?php echo $key['presentase'];?></center></td>
                     <td><center><?php echo $key['tanggal'];?></center></td>
                     <td class="center">
                       <center>
                         <a class="btn btn-danger" onclick="return confirm('Hapus data ini?')" href="<?php echo site_url()."/c_riwayat/menghapusRiwayat/".$key['id_riwayat']; ?>">
                           <i class="fa fa-trash-o"></i> 
                         </a>             
-                    <button type="button" class="btn btn-info">
-                        <i class="fa fa-print"></i>
+
+                        <a target="blank" class="btn btn-success" href="<?php echo base_url()."index.php/c_riwayat/tes/".$key['id_riwayat']; ?>">
+                          <i class="fa fa-print"></i>
+                        </a>
                     </button>
                       </center>
                     </td>

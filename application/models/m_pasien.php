@@ -40,5 +40,12 @@ class M_pasien extends CI_model {
 		return $mhs->result_array();
 	}
 
+	function getPK($username_p)
+ 	{
+	  $this->db->where('username_p',$username_p); 
+	  $query = $this->db->get('pasien');   
+	  return $query->result();  
+ 	}
+
 }
 ?>

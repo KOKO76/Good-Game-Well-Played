@@ -32,7 +32,7 @@
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Kode</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="id_relasi" name="id_relasi" class="form-control">
+                        <input type="text" id="id_relasi" name="id_relasi" class="form-control" required="required" oninvalid="this.setCustomValidity('Id Relasi Tidak Boleh Kosong')" oninput="setCustomValidity('')"  placeholder="Awali Kode Relasi dengan Huruf 'R', Contoh: R01">
                         <div id="response" class="response"></div>
                       </div>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="form-group row has-success">
                       <label class="col-sm-2 form-control-label"><b>Bobot</b></label>
                       <div class="col-sm-10">
-                        <input type="text" id="bobot" name="bobot" class="form-control">
+                        <input type="text" id="bobot" name="bobot" class="form-control" required="required" oninvalid="this.setCustomValidity('Bobot Relasi Tidak Boleh Kosong')" oninput="setCustomValidity('')" >
                       </div>
                     </div>
 

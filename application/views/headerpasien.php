@@ -33,6 +33,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url('assets/img/apple-touch-icon-144x144.png');?>">
     <link rel="apple-touch-icon" sizes="152x152" href="<?php echo base_url('assets/img/apple-touch-icon-152x152.png');?>">
     
+     <link rel="stylesheet" href="<?php echo base_url('assets/dataTables/datatables.min.css');?>">
+     <script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+     
   </head>
   <body>
     <div id="all">
