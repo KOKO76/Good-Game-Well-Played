@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//test push
 
 class C_berandaadmin extends CI_Controller {
 
