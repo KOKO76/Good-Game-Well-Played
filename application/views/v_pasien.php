@@ -6,7 +6,7 @@
           </div>
          <div class="col-md-5">
            <ul class="breadcrumb d-flex justify-content-end">
-              <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url(),"index.php/c_berandaadmin"?>">Beranda</a></li>
               <li class="breadcrumb-item active">Data Pasien</li>
            </ul>
           </div>

@@ -78,20 +78,4 @@ class m_konsultasi extends CI_Model {
 
 		return $query->result_array();
 	}
-
-		// public function getDensitasAwal($selected)
-	// {
-	// 	$query = $this->db->query("
-	// 		SELECT a.id_gejala as kode_gejala, GROUP_CONCAT(b.id_penyakit) AS kode_penyakit, 
-	// 		c.nama_gejala, ROUND(AVG(a.bobot),2) AS bel, (1 - ROUND(AVG(a.bobot),2)) as pls
- //      FROM relasi a
- //      LEFT JOIN penyakit b ON a.id_penyakit=b.id_penyakit
- //      LEFT JOIN gejala c ON a.id_gejala = c.id_gejala
- //      WHERE a.id_gejala IN ('".implode("','", $selected)."') 
- //      GROUP BY a.id_gejala
- //      ");
-
-	// 	return $query->result_array();
-	// }
-
 }

@@ -33,11 +33,6 @@ class M_riwayat extends CI_model {
 
 	public function getLastDataRiwayat()
 	{
-		// $this->db->select('id_riwayat,tanggal');
-		// $this->db->order_by('id_riwayat', 'DESC');
-		// $this->db->limit(1);
-		// $query = $this->db->get('riwayat');
-
 		$query = $this->db->query("
 			SELECT id_riwayat, tanggal 
 			FROM riwayat 
@@ -64,9 +59,6 @@ class M_riwayat extends CI_model {
 			FROM riwayat 
 			JOIN pasien on pasien.username_p = riwayat.username_p
 			JOIN penyakit on penyakit.id_penyakit = riwayat.id_penyakit WHERE riwayat.username_p = '".$username."'");
-
-		$this->db->order_by('tanggal', 'DESC');
-		$query = $this->db->get_where('riwayat', array('username_p' => $username));
     return $query;
 	}
 }

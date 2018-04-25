@@ -74,13 +74,13 @@
 						<div class="box-content">
 								<table class="table">
 									<tr>
-										<td>Nama Gejala</td><td>:</td><td><?php echo $nama_gejala;?></td>
-									</tr>
-									<tr>
 										<td>Penyakit</td><td>:</td><td><?php echo $nama_penyakit; ?></td>
 									</tr>
 									<tr>
 										<td>Presentase</td><td>:</td><td><?php echo $presentase; ?></td>
+									</tr>
+									<tr>
+										<td>Gejala</td><td>:</td><td><?php echo $nama_gejala;?></td>
 									</tr>
 									<tr>
 										<td>Deskripsi</td><td>:</td><td><?php echo $deskripsi; ?></td>

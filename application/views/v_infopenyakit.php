@@ -70,7 +70,7 @@ for (i = 0; i < coll.length; i++) {
                                  </br>
                                  </br>
                                  <h4><b>Penanganan</b></h4>
-                                 &emsp; &emsp; <?php echo $key['penanganan']; ?> 
+                                 <?php echo $key['penanganan']; ?> 
                                  </p>
                                  
                    </div>
